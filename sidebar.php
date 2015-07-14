@@ -4,10 +4,10 @@
     <img src="<? echo $site_url; ?>/assets/codame-logo-alpha.png" alt="CODAME Art+Tech" />
   </a>
 
-  <div id="links">
-    <a href="<? echo $site_url; ?>/artists">Artists</a>
-    <a href="<? echo $site_url; ?>/events">Events</a>
-    <a href="<? echo $site_url; ?>/projects">Projects</a>
+  <div id="links" class='active-<? echo $table ?>'>
+    <a href="<? echo $site_url; ?>/artists" id='link-artists'>Artists</a>
+    <a href="<? echo $site_url; ?>/events" id='link-events'>Events</a>
+    <a href="<? echo $site_url; ?>/projects" id='link-projects'>Projects</a>
     <a href="https://medium.com/codame-art-tech">Stories</a>
     <hr>
     

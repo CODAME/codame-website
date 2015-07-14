@@ -44,6 +44,9 @@ iframe{
   border-top: 1px solid #222;
   transition:background-color .2s;
 }
+.active-artists>#link-artists, .active-events>#link-events, .active-projects>#link-projects{
+  background-color: rgba(40,40,40,.5);
+}
 #links a:hover{
   background-color: rgba(64, 64, 64, 0.79);
 }
@@ -279,7 +282,6 @@ div#social-sidebar svg {
 #social-sidebar a:hover svg {
     fill: #ccc;
 }
-
 div#social-sidebar {
     float: left;
     margin-top: 20px;
