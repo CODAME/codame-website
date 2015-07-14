@@ -1,5 +1,7 @@
 # Custom CMS for CODAME Art+Tech
 
+<a href="http://codame.com">http://codame.com</a>
+
 <img src="http://codame.com/assets/codame-website-screenshot.png" />
 
 This is a CMS made in PHP to handle CODAME's specific needs. The architecture is inspired by Wordpress but lacks all the fluff, resulting in a fast scalable system for managing our content.
