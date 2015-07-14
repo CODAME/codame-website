@@ -13,4 +13,4 @@ Features include:
 - Chronological ordering for event posts.
 - Automatic thumbnail generation.
 
-<span style="font-size:10px">All the code for this CMS is freely usable under the MIT license. CODAME logo and brand  belongs to CODAME Art+Tech. SVG Entypo pictograms on the site are by Daniel Bruce — <a href="http://entypo.com">www.entypo.com</a></span>
+<span style="font-size:.8em">All the code for this CMS is freely usable under the MIT license. CODAME logo and brand  belongs to CODAME Art+Tech. SVG Entypo pictograms on the site are by Daniel Bruce — <a href="http://entypo.com">www.entypo.com</a></span>
