@@ -62,46 +62,52 @@ if( $action == "edit" ){
 
         <!-- Shared fields. Name, pic -->
 
-        <label>
-          <span><? echo $noun ?> Name <b>*</b></span>
-          <input type="text" name="name" placeholder="Name" value="<? echo $content['name'] ?>" />
-        </label>
+        <fieldset class='left'>
+        
+          <label>
+            <span><? echo $noun ?> Name <b>*</b></span>
+            <input type="text" name="name" placeholder="Name" value="<? echo $content['name'] ?>" />
+          </label>
 
-        <? 
-          if($content['pic']){
-            echo "<img class='thumbnail' width='150' src='$pic' />";
-          }
-        ?>
+          <? 
+            if($content['pic']){
+              echo "<img class='thumbnail' width='150' src='$pic' />";
+            }
+          ?>
 
-        <label>
-          <span>Main Picture <b>*</b></span>
-          <input type="file" name="pic" value="<? echo $content['pic'] ?>" />
-        </label>
+          <label>
+            <span>Main Picture <b>*</b></span>
+            <input type="file" name="pic" value="<? echo $content['pic'] ?>" />
+          </label>
+
+        </fieldset>
+
+        <fieldset class='right'>
 
         <!-- Fields for artists only -->
 
-        <? if( $table == 'artists' ){ ?>
+        <? if( $table == 'artists' ){ ?>       
         
-        <label>
-          <span>Artist Email Address</span>
-          <input type="text" name="email" placeholder="Email Address" value="<? echo $content['email'] ?>"/>
-        </label>
+          <label>
+            <span>Artist Email Address (for internal use)</span>
+            <input type="text" name="email" placeholder="Email Address" value="<? echo $content['email'] ?>"/>
+          </label>
 
-        <? } ?>
+          <? } ?>
 
-        <!-- Fields for artists and projects only -->
+          <!-- Fields for artists and projects only -->
 
-        <? if( $table == 'artists' || $table == 'projects'){ ?>
+          <? if( $table == 'artists' || $table == 'projects'){ ?>
 
-        <label>
-          <span><? echo $noun ?> Website URL</span>
-          <input type="text" name="website" placeholder="Website" value="<? echo $content['website'] ?>"/>
-        </label>
+          <label>
+            <span><? echo $noun ?> Website URL (appears on sidebar)</span>
+            <input type="text" name="website" placeholder="Website" value="<? echo $content['website'] ?>"/>
+          </label>
 
-        <label>
-          <span><? echo $noun ?> Twitter URL</span>
-          <input type="text" name="twitter" placeholder="http://twitter.com/<? echo $noun ?>" value="<? echo $content['twitter'] ?>"/>
-        </label>
+          <label>
+            <span><? echo $noun ?> Twitter URL (appears on sidebar)</span>
+            <input type="text" name="twitter" placeholder="http://twitter.com/<? echo $noun ?>" value="<? echo $content['twitter'] ?>"/>
+          </label>
 
         <? } ?>
 
@@ -109,38 +115,46 @@ if( $action == "edit" ){
 
         <? if( $table == 'events' || $table == 'projects' ){ ?>
 
-        <label>
-          <span>Artists Involved</span>
-          <input name="artists-array" id="artists-array" value="<? echo $content['artists_array']; ?>" />
-        </label>
+          <label>
+            <span>Artists Involved</span>
+            <input name="artists-array" id="artists-array" value="<? echo $content['artists_array']; ?>" />
+          </label>
+
+          <? } ?>
+
+          <!-- Fields for events only -->
+
+          <? if( $table == 'events' ){ ?>
+
+          <label>
+            <span>Projects Represented</span>
+            <input name="projects-array" id="projects-array" value="<? echo $content['projects_array']; ?>" />
+          </label>
+
+          <label>
+            <span>Event Date <b>*</b></span>
+            <input type="date" name="date" value="<? echo $content['date'] ?>" />
+          </label>
 
         <? } ?>
 
-        <!-- Fields for events only -->
+        </fieldset>
 
-        <? if( $table == 'events' ){ ?>
+        <fieldset class=right>
+          <div class='button-wrapper'>
+            <span>Submit</span>
+            <input type="submit" />
+          </div>
+        </fieldset>
 
-        <label>
-          <span>Projects Represented</span>
-          <input name="projects-array" id="projects-array" value="<? echo $content['projects_array']; ?>" />
-        </label>
-
-        <label>
-          <span>Event Date <b>*</b></span>
-          <input type="date" name="date" value="<? echo $content['date'] ?>" />
-        </label>
-
-        <? } ?>
-
-
-        <label>
-          <span> Description <b>*</b></span>
-          <textarea name="description" />
-            <? echo $content['description'] ?>
-          </textarea>
-        </label>
-
-        <input type="submit" />
+        <fieldset>
+          <label>
+            <span> Description <b>*</b></span>
+            <textarea name="description" />
+              <? echo $content['description'] ?>
+            </textarea>
+          </label>
+        </fieldset>
 
       </form>
 
