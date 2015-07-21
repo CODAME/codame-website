@@ -94,6 +94,18 @@ hr{
     text-align: center;
     border-left: 1px solid #666;
 }
+.tile-date {
+  position: absolute;
+  right: 0;
+  top: -25px;
+  width: 50px;
+  padding: 5px 5px 3px;
+  text-align: center;
+  border-left: 1px solid #666;
+  color: #fff;
+  background-color: #333;
+  z-index: 3;
+}
 
 #events .content-block>span {
   min-height: 50px;

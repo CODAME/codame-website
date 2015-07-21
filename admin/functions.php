@@ -376,7 +376,7 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
     if( $layout_type == 'tiles' ){
       echo "<a href='$table/$slug' style='background-image:url($pic)'>";
       if( $table == 'events'){
-        echo "<div class='date'>$date</div>";
+        echo "<div class='tile-date'>$date</div>";
       }
       echo "  <span>$name</span>";
       echo "</a>";  
