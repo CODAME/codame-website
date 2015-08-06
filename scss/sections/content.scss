@@ -1,0 +1,42 @@
+#content{
+  float: left;
+  width: 60%;
+  margin-left: 2%;
+  max-width:900px;
+  margin-bottom: 40px;
+}
+#content img{
+  height:auto;
+}
+
+#content.article {
+  color:#fff!important;
+  width: 55%;
+  max-width: 550px;
+}
+
+.article>img {
+ width: 100%;
+}
+
+.article h1, .article .text-content{
+  padding:20px 0;
+}
+.text-content{
+  font-size: 15px;
+}
+.text-content a{
+  color:#00a4a7!important;
+}
+
+// remove this at some point
+#content.white-bg {
+  background-color: rgba(255,255,255,.8);
+  color: #000!important;
+  padding: 20px;
+}
+
+// holds the right sidebar vertically with the content on single.php, on tablet screen width and below.
+#container{
+  overflow: auto;
+}

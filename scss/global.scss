@@ -1,0 +1,33 @@
+*{
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+}
+body{
+  margin:0;
+  background-image: url(assets/bg.jpg);
+  background-size: contain;
+  background-repeat: repeat-x;
+  background-color: #000;
+  background-attachment: fixed;
+  font-family:'Asap',helvetica,arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+img{
+  max-width:100%;
+  height: auto;
+}
+iframe{
+  max-width:100%;
+  width: 100%;
+  min-height: 160px;
+}
+hr{
+  float: left;
+  width: 100%;
+  margin: 0;
+  border: 0;
+}
+h3{
+  margin:0;
+}

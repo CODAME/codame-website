@@ -1,0 +1,59 @@
+#sidebar{
+  float: left;
+  width: 30%;
+  max-width: 250px;
+  padding-right: 40px;
+}
+#links{
+  float: left;
+  width: 100%;
+  margin-top: 20px;
+}
+#links a{
+  float: left;
+  width: 100%;
+  padding:10px;
+  color:#fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  border-bottom: 1px solid #111;
+  border-top: 1px solid #222;
+  transition:background-color .2s;
+}
+.active-artists>#link-artists,
+.active-events>#link-events, 
+.active-projects>#link-projects{
+  background-color: rgba(40,40,40,.5);
+}
+#links a:hover{
+  background-color: rgba(64, 64, 64, 0.79);
+}
+#links hr {
+  float: none;  
+  margin-bottom: 10px;
+  opacity: 0;
+}
+
+// Social icons
+
+#social-sidebar {
+  float: left;
+  margin-top: 20px;
+  width: 140px;
+
+  svg {
+    width: 20px;
+    fill: #797979;
+    margin: 10px 15px;
+    max-height: 30px;
+  }
+
+  a {
+    display: inline-block;
+
+    &:hover svg {
+      fill: #ccc;
+    }
+  }
+}

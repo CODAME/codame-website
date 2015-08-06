@@ -1,0 +1,26 @@
+#admin-bar{
+  float: left;
+  width: 100%;
+  color:#fff;
+  background-color: #111;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
+
+  a{
+    display: block;
+    padding:8px 10px;
+    background-color:rgba(255,255,255,.1);
+    text-decoration: none;
+    color:#fff;
+    float: left;
+    font-size: 12px;
+    
+    &:hover{
+      background-color:rgba(255,255,255,.2);
+    }
+  }
+}
+
+#log-out{
+  float: right!important;
+}

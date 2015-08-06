@@ -1,0 +1,54 @@
+#info-bar {
+  float: left;
+  width: 25%;
+  padding: 20px 0 0 40px;
+  color: #fff;
+  
+  a{
+    color:#fff;
+
+    &:hover{
+      background-color: rgba(255,255,255,.1);
+    }
+  }
+}
+
+.related-post {
+  width: 100%;
+  height: 80px;
+  max-width: 150px;
+  border: 1px solid rebeccapurple;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-size: cover;
+  background-position: 50% 20%;
+  position: relative;
+  span{
+    position: absolute;
+    left: 105%;
+    font-size: 14px;
+  }
+}
+
+.info-link {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 12px;
+  display: block;
+  border-bottom: 1px dotted;
+  position: relative;
+  line-height: 20px;
+}
+
+#info-bar svg{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  fill:#fff;
+  margin-right: 5px;
+}
+
+#info-bar h3{
+  margin-bottom: 10px;
+}

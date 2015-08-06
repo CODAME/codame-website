@@ -24,141 +24,144 @@
 
   <? include('header.php') ?>
   <? include('sidebar.php') ?>
-  <div id="content" class="article <? echo $class ?>">
 
-      <h2 class="bar-link">
-        <? echo $content['name']; ?>
-      </h2>
+  <div id="container">
+    <div id="content" class="article <? echo $class ?>">
 
-      <? if( !empty( $content['pic'] ) ){ ?>
-        <img src="<? echo $content['pic']; ?>" alt="<? echo $content['name']; ?>" />
-      <? } ?>
-      
-      <div class="text-content">
-        <? echo $content['description']; ?>
-      </div>
+        <h2 class="bar-link">
+          <? echo $content['name']; ?>
+        </h2>
 
-  </div>
-  <div id="info-bar">
+        <? if( !empty( $content['pic'] ) ){ ?>
+          <img src="<? echo $content['pic']; ?>" alt="<? echo $content['name']; ?>" />
+        <? } ?>
+        
+        <div class="text-content">
+          <? echo $content['description']; ?>
+        </div>
 
-    <?
+    </div>
+    <div id="info-bar">
 
-    // RELATED POSTS
+      <?
 
-    // For artist page OR project page: show events
+      // RELATED POSTS
 
-    if( $table == 'artists' || $table == 'projects'){
+      // For artist page OR project page: show events
 
+      if( $table == 'artists' || $table == 'projects'){
+
+        if( $table == 'artists' ){
+          // search column is artists in the event row
+          $search_col = 'artists_array';
+        }
+
+        if( $table == 'projects' ){
+          // search column is projects in the event row
+          $search_col = 'projects_array';
+        }
+
+        // run the search
+        $events = search_table( 'events', $search_col, $slug, 'date');
+
+        // if there are results, output them
+        if( mysqli_num_rows($events) ){
+
+          echo "<h3>Seen At:</h3>";  
+
+          while($event = mysqli_fetch_assoc($events)){
+
+            $pic    = $event['pic'];
+            $name   = $event['name'];
+            $url    = $site_url.'/events/'.$event['slug'];
+
+            output_related_post($url,$pic,$name);
+            
+          }
+        }
+        
+      }
+
+      // For event page OR project page: show artists
+
+      if( $table == 'events' || $table == 'projects' ){
+
+        $artists = explode(',',$content['artists_array']);
+
+        if ( !empty($artists[0]) ){
+          echo "<h3>Artists:</h3>";
+          foreach( $artists as $artist){
+            $artist_slug = $artist;
+            $artist = get_row('artists','slug',$artist);
+            
+            $pic  = $artist['pic'];
+            $name = $artist['name'];
+            $url  = $site_url.'/artists/'.$artist_slug;
+
+            output_related_post($url,$pic,$name);
+          }
+        }
+      }
+
+      // event page: show projects
+      if( $table == 'events' ){
+        $projects = explode(',',$content['projects_array']);
+        if ( !empty($projects[0]) ){
+          echo "<h3>Projects:</h3>";
+          foreach( $projects as $project){
+            $project_slug = $project;
+            $project = get_row('projects','slug',$project);
+            
+            $pic  = $project['pic'];
+            $name = $project['name'];
+            $url  = $site_url.'/projects/'.$project_slug;
+
+            output_related_post($url,$pic,$name);
+          }
+        }
+      }
+
+      // artists page: show projects
       if( $table == 'artists' ){
-        // search column is artists in the event row
-        $search_col = 'artists_array';
-      }
+        $projects = search_table('projects','artists_array',$slug);
+        if( mysqli_num_rows( $projects ) ){
 
-      if( $table == 'projects' ){
-        // search column is projects in the event row
-        $search_col = 'projects_array';
-      }
+          echo "<h3>Works On:</h3>";
 
-      // run the search
-      $events = search_table( 'events', $search_col, $slug, 'date');
+          while($project = mysqli_fetch_assoc($projects)){
 
-      // if there are results, output them
-      if( mysqli_num_rows($events) ){
+            $pic    = $project['pic'];
+            $name   = $project['name'];
+            $url    = $site_url.'/projects/'.$project['slug'];
 
-        echo "<h3>Seen At:</h3>";  
-
-        while($event = mysqli_fetch_assoc($events)){
-
-          $pic    = $event['pic'];
-          $name   = $event['name'];
-          $url    = $site_url.'/events/'.$event['slug'];
-
-          output_related_post($url,$pic,$name);
-          
+            output_related_post($url,$pic,$name);
+            
+          }
         }
       }
-      
-    }
 
-    // For event page OR project page: show artists
 
-    if( $table == 'events' || $table == 'projects' ){
+      if( $content['twitter'] ){
 
-      $artists = explode(',',$content['artists_array']);
+        echo '<a href="'.$content["twitter"].'" class="info-link">';
+        include('assets/twitter.svg');
+        echo $content['name'] . ' on Twitter';
+        echo '</a><hr>';
 
-      if ( !empty($artists[0]) ){
-        echo "<h3>Artists:</h3>";
-        foreach( $artists as $artist){
-          $artist_slug = $artist;
-          $artist = get_row('artists','slug',$artist);
-          
-          $pic  = $artist['pic'];
-          $name = $artist['name'];
-          $url  = $site_url.'/artists/'.$artist_slug;
-
-          output_related_post($url,$pic,$name);
-        }
       }
-    }
 
-    // event page: show projects
-    if( $table == 'events' ){
-      $projects = explode(',',$content['projects_array']);
-      if ( !empty($projects[0]) ){
-        echo "<h3>Projects:</h3>";
-        foreach( $projects as $project){
-          $project_slug = $project;
-          $project = get_row('projects','slug',$project);
-          
-          $pic  = $project['pic'];
-          $name = $project['name'];
-          $url  = $site_url.'/projects/'.$project_slug;
+      if( $content['website'] ){
 
-          output_related_post($url,$pic,$name);
-        }
+        echo '<a href="'.$content["website"].'" class="info-link">';
+        include('assets/network.svg');
+        echo $content['name'];
+        echo '</a><hr>';
+
       }
-    }
 
-    // artists page: show projects
-    if( $table == 'artists' ){
-      $projects = search_table('projects','artists_array',$slug);
-      if( mysqli_num_rows( $projects ) ){
+      ?>
 
-        echo "<h3>Works On:</h3>";
-
-        while($project = mysqli_fetch_assoc($projects)){
-
-          $pic    = $project['pic'];
-          $name   = $project['name'];
-          $url    = $site_url.'/projects/'.$project['slug'];
-
-          output_related_post($url,$pic,$name);
-          
-        }
-      }
-    }
-
-
-    if( $content['twitter'] ){
-
-      echo '<a href="'.$content["twitter"].'" class="info-link">';
-      include('assets/twitter.svg');
-      echo $content['name'] . ' on Twitter';
-      echo '</a><hr>';
-
-    }
-
-    if( $content['website'] ){
-
-      echo '<a href="'.$content["website"].'" class="info-link">';
-      include('assets/network.svg');
-      echo $content['name'];
-      echo '</a><hr>';
-
-    }
-
-    ?>
-
+    </div>
   </div>
   <? include('footer.php') ?>
 

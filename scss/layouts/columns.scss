@@ -1,0 +1,39 @@
+.column{
+  float: left;
+  width: 33%;
+}
+.column:first-child .bar-link{
+  padding-left: 15px;
+}
+.column:last-child .bar-link{
+  padding-right: 15px;
+}
+.inner-column{
+  padding:0px 15px;
+}
+.content-block{
+  position: relative;
+  float: left;
+  text-decoration: none;
+  margin-bottom: 30px;
+  max-width: 100%;
+
+  .date {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    border-left: 1px solid #666;
+  }
+}
+.content-block:hover>span{
+  background-color: $pink;
+}
+.more-link{
+  display: block;
+  color:#00a4a7;
+  float: left;
+  padding-left: 15px;
+}
