@@ -13,3 +13,14 @@
 </script>
 <noscript><p><img src="//codame.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code -->
+
+
+<script>
+
+// Menu open + close on mobile. Click handler is attached inline on #menu-button
+
+var toggle_menu = function(){
+  document.querySelector('#menu-content').classList.toggle('open');
+}
+
+</script>

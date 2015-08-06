@@ -80,3 +80,66 @@
     display: none;
   }
 }
+@media (max-width: 500px) {
+  #sidebar{
+    width: 100%;
+    max-width: none;
+  }
+  #logo-link {
+    display: block;
+    width: 80px;
+    margin: 5px auto 0;
+  }
+  #menu-button{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 1px solid #222;
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+  #links a, #menu-button{
+    height: 44px;
+    padding-top: 14px;
+  }
+  #menu-content{
+    display: none;
+  }
+  #menu-content.open{
+    display: block;
+  }
+  #social-sidebar{
+    width: 100%;
+  }
+  #content{
+    margin-top: 15px;
+    width: 100%;
+    padding: 0;
+  }
+  .column{
+    width: 100%;
+
+    &:first-child .bar-link{
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  // only show the first three blocks in any column. (homepage)
+  .content-block:nth-child(n+4){
+    display: none;
+  }
+
+  // single artist, event, or project pages
+  #content.article, #container{
+    width: 100%;
+  }
+  .article .text-content{
+    padding: 20px;
+  }
+
+  // category pages ( artists, events, projects)
+  .tiles>a{
+    width: 100%;
+  }
+}

@@ -4,12 +4,16 @@
   max-width: 250px;
   padding-right: 40px;
 }
+#menu-button{
+  color:#fff;
+  display: none; // this is shown with media queries.
+}
 #links{
   float: left;
   width: 100%;
   margin-top: 20px;
 }
-#links a{
+#links a, #menu-button{
   float: left;
   width: 100%;
   padding:10px;
