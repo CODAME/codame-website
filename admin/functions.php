@@ -74,13 +74,16 @@ function get_table($table, $offset, $limit, $order_by = ''){
     $limit_clause = "LIMIT $offset, $limit ";
   }
 
-  if( $order_by !== '' ){
+  if( $order_by !== '' && $table !== 'sponsors'){
     $order_by_clause = "ORDER BY $order_by DESC";
+  }else if( $order_by !== '' && $table == 'sponsors' ){
+    $order_by_clause = "ORDER BY $order_by ASC";
   }else{
     $order_by_clause = "ORDER BY id DESC";
   }
 
   $query = "SELECT * FROM $table $order_by_clause $limit_clause";
+
   $result = mysqli_query($con, $query);
   
   return $result;
@@ -331,6 +334,19 @@ function output_related_post($url,$pic,$name){
   echo '<hr>';
 }
 
+function output_sponsor($url,$pic,$name){
+
+  $pic = get_image_size('small',$pic);
+  echo '<a href="'.$url.'" target="_blank">';
+  echo '<div class="related-post sponsor">';
+  echo '<img src="'.$pic.'"/>';
+  echo '<span>'.$name.'</span>';
+  echo '</div>';
+  echo '</a>';
+  echo '<hr>';
+ 
+}
+
 
 function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
   
@@ -370,14 +386,25 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
     $pic  = get_image_size('small',$result['pic']);
     $date = date("d M", strtotime($result['date']));
     
-    
     // tiles layout
 
     if( $layout_type == 'tiles' ){
-      echo "<a href='$table/$slug' style='background-image:url($pic)'>";
-      if( $table == 'events'){
-        echo "<div class='tile-date'>$date</div>";
+
+      // get url
+      if( $table == 'sponsors' ){
+        $url = $result['website'];
+      }else{
+        $url = $table . '/' . $slug;
       }
+
+      $tile_class = $table."-tile";
+
+      echo "<a href='$url' style='background-image:url($pic)' class='$tile_class' >";
+      
+      if( $table == 'events'){
+        echo "<div class='date'>$date</div>";
+      }
+
       echo "  <span>$name</span>";
       echo "</a>";  
     }

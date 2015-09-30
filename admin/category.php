@@ -20,10 +20,6 @@ $noun = ucfirst(substr($table, 0, -1)); // noun for what is being edited. artist
     
     $rows = get_table($table,0,0);
 
-    if( $table == 'artists' || $table == 'projects' || $table == 'pages' ){
-
-    }
-
     $posts = array();
     $delete_svg = file_get_contents('assets/cross.svg');
 
@@ -41,7 +37,11 @@ $noun = ucfirst(substr($table, 0, -1)); // noun for what is being edited. artist
 
       $row  = "<tr slug='$slug'>";
       $row .= "<td>$date</td>";
-      $row .= "<td><input class='visibility' type='checkbox' $checked /></td>";
+
+      if( $table !== 'sponsors' ){
+        $row .= "<td><input class='visibility' type='checkbox' $checked /></td>";
+      }
+      
       $row .= "<td class='post-link'><a href='edit-single.php?action=edit&table=$table&slug=$slug'>$name</a></td>";
       $row .= "<td class='delete'>$delete_svg</td>";
       $row .= "</tr>";

@@ -51,11 +51,8 @@ if( $action == "edit" ){
         <!-- this slug is used when editing an existing entry. New slug gets generated from the new name of the entry. -->
         <input type="hidden" name="slug" value="<? echo $slug ?>" />
         
-        <!-- pic value. saved here because it would get overwritten by an empty value -->
+        <!-- initial pic value when editing. saved here because it would get overwritten by an empty value -->
         <input type="hidden" name="pic" value="<? echo $content['pic'] ?>" />
-        
-        <!-- curl main pic. use this to download a pic from the net as the main image -->
-        <input type="hidden" name="curl-main-pic" value="" />
         
         <!-- API Key. Verifies that the form submission is from our server. -->
         <input type="hidden" name="api-key" value="<? echo $codame_api_key ?>" />
@@ -93,16 +90,22 @@ if( $action == "edit" ){
             <input type="text" name="email" placeholder="Email Address" value="<? echo $content['email'] ?>"/>
           </label>
 
-          <? } ?>
+        <? } ?>
 
-          <!-- Fields for artists and projects only -->
+        <!-- Fields for artists, projects, sponsors (website) -->
 
-          <? if( $table == 'artists' || $table == 'projects'){ ?>
+        <? if( $table == 'artists' || $table == 'projects' || $table == 'sponsors' ){ ?>
 
           <label>
-            <span><? echo $noun ?> Website URL (appears on sidebar)</span>
+            <span><? echo $noun ?> Website URL</span>
             <input type="text" name="website" placeholder="Website" value="<? echo $content['website'] ?>"/>
           </label>
+
+        <? } ?>
+
+        <!-- Fields for artists and projects only (Twitter) -->
+
+        <? if( $table == 'artists' || $table == 'projects'){ ?>
 
           <label>
             <span><? echo $noun ?> Twitter URL (appears on sidebar)</span>
@@ -120,15 +123,20 @@ if( $action == "edit" ){
             <input name="artists-array" id="artists-array" value="<? echo $content['artists_array']; ?>" />
           </label>
 
-          <? } ?>
+        <? } ?>
 
-          <!-- Fields for events only -->
+        <!-- Fields for events only -->
 
-          <? if( $table == 'events' ){ ?>
+        <? if( $table == 'events' ){ ?>
 
           <label>
             <span>Projects Represented</span>
             <input name="projects-array" id="projects-array" value="<? echo $content['projects_array']; ?>" />
+          </label>
+
+          <label>
+            <span>Sponsored By</span>
+            <input name="sponsors-array" id="sponsors-array" value="<? echo $content['sponsors_array']; ?>" />
           </label>
 
           <label>
@@ -147,14 +155,20 @@ if( $action == "edit" ){
           </div>
         </fieldset>
 
-        <fieldset>
-          <label>
-            <span> Description <b>*</b></span>
-            <textarea name="description" />
-              <? echo $content['description'] ?>
-            </textarea>
-          </label>
-        </fieldset>
+        <!-- Fields for artists, projects, events, pages (Description) -->
+
+        <? if( $table == 'artists' || $table == 'projects' || $table == 'events' || $table == 'pages' ){ ?>
+
+          <fieldset>
+            <label>
+              <span> Description <b>*</b></span>
+              <textarea name="description" />
+                <? echo $content['description'] ?>
+              </textarea>
+            </label>
+          </fieldset>
+
+        <? } ?>
 
       </form>
 
@@ -193,9 +207,10 @@ if( $action == "edit" ){
     }
     echo "];";
     
-    // if this is an event page, also print a list of all available projects
+    // if this is an event page, also print a list of all available projects and sponsors
     if( $table == 'events' ){
      
+      // get all projects
       $projects = get_table('projects',0,0);
       echo "projects = [";
       while($project = mysqli_fetch_assoc($projects)){
@@ -208,6 +223,22 @@ if( $action == "edit" ){
         autocomplete: {
           delay: 0,
           source: projects
+        }
+      });
+
+      <? // get all sponsors
+      $sponsors = get_table('sponsors',0,0);
+      echo "sponsors = [";
+      while($sponsor = mysqli_fetch_assoc($sponsors)){
+        echo "'".$sponsor['slug']."', ";
+      }
+      echo "];\n"; ?>
+
+      // activate the sponsors picker
+      $('#sponsors-array').tagEditor({
+        autocomplete: {
+          delay: 0,
+          source: sponsors
         }
       });
 

@@ -23,12 +23,20 @@
   background-size: cover;
   background-position: 50% 20%;
   position: relative;
+
+  &.sponsor {
+    height: auto;
+  }
+  
   span{
     position: absolute;
     left: 105%;
+    top: 0;
     font-size: 14px;
   }
 }
+
+
 
 .info-link {
   color: #fff;

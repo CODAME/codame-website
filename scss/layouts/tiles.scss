@@ -20,6 +20,7 @@
 #events .content-block>span {
   min-height: 50px;
 }
+
 .tiles>a{
   display: block;
   float: left;
@@ -27,6 +28,7 @@
   height: 210px;
   background-size: cover;
   background-position: 50% 20%;
+  background-color: #000;
   position: relative;
   margin: 20px 0;
   text-decoration: none;
@@ -58,6 +60,14 @@
 .tiles>a:hover>span,.tiles>a:hover>div{
   background-color: $pink;
 }
+
+.tiles>a.sponsors-tile {
+  background-repeat: no-repeat;
+  background-color: #fff!important;
+  background-position: 50%!important;
+  background-size:contain;
+}
+
 .bar-link{
   text-decoration: none;
   color: #DFDFDF;

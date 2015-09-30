@@ -13,7 +13,7 @@
       <a href="<? echo $site_url; ?>/artists" id='link-artists'>Artists</a>
       <a href="<? echo $site_url; ?>/events" id='link-events'>Events</a>
       <a href="<? echo $site_url; ?>/projects" id='link-projects'>Projects</a>
-      <a href="https://medium.com/codame-art-tech">Stories</a>
+      <a href="<? echo $site_url; ?>/sponsors" id='link-sponsors'>Sponsors</a>
       
       <?
       // do not remove or edit the flags below. They are used by PHP search/replace to auto generate the list of pages.
@@ -21,7 +21,7 @@
       // this function is called when a new page is saved, or any page is edited.
       ?>
 
-      <!-- flag start --><a href='http://codame.com/pages/contact-us'>Contact Us</a><a href='http://codame.com/pages/about'>About</a><a href='http://codame.com/pages/media-kit'>Media Kit</a><a href='http://codame.com/pages/sponsors'>Sponsors</a><a href='http://codame.com/pages/donate'>Donate</a><a href='http://codame.com/pages/adopt-art-tech'>Adopt ART+TECH</a><!-- flag end -->    
+      <!-- flag start --><a href='http://codame.com/pages/contact-us'>Contact Us</a><a href='http://codame.com/pages/about'>About</a><a href='http://codame.com/pages/media-kit'>Media Kit</a><a href='http://codame.com/pages/donate'>Donate</a><a href='http://codame.com/pages/adopt-art-tech'>Adopt ART+TECH</a><!-- flag end -->    
 
     </nav>
 

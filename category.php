@@ -7,10 +7,12 @@
 
   $table = $_GET['table'];
 
-  if( $table == 'artists' || $table == 'projects' ){
+  if( $table == 'artists' || $table == 'projects'){
     $order_by = 'edited';
   }else if( $table == 'events' ){
     $order_by = 'date';
+  }else if( $table == 'sponsors' ){
+    $order_by = 'name';
   }else{
     // an invalid table was given. Redirect to home.
     header('Location:http://codame.com');
