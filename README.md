@@ -1,4 +1,4 @@
-# Custom CMS for CODAME Art+Tech
+# Custom CMS for CODAME ART+TECH
 
 <a href="http://codame.com">http://codame.com</a>
 
@@ -15,6 +15,6 @@ Features include:
 
 <sub>
   All the code for this CMS is freely usable under the MIT license. 
-  CODAME logo and brand  belongs to CODAME Art+Tech. 
+  CODAME logo and brand  belongs to CODAME ART+TECH. 
   SVG Entypo pictograms on the site are by Daniel Bruce — <a href="http://entypo.com">www.entypo.com</a>
 </sub>

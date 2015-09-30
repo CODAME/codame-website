@@ -56,7 +56,7 @@
       <div class='inner-column'>
         <? output_results('projects',0,6,'blocks','edited'); ?>
       </div>
-      <a href="<? echo $site_url; ?>/events" class="more-link">
+      <a href="<? echo $site_url; ?>/projects" class="more-link">
         All CODAME adoptable PROJECTS
       </a>
     </div>
