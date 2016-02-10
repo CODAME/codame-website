@@ -35,7 +35,7 @@
         <? include('assets/facebook.svg') ?>
       </a>
 
-      <a href="https://medium.com/@codame">
+      <a href="https://medium.com/codame-art-tech">
         <? include('assets/medium.svg') ?>
       </a>
 
