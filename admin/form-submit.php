@@ -1,6 +1,8 @@
 <?
 
-include('/home/gridwalk/config/secrets.php');
+// config vars
+$secrets_path = $_SERVER['DOCUMENT_ROOT'] . '/config/secrets.php';
+include($secrets_path);
 
 // form was submitted
 if (!empty($_POST) && !$_POST['password']){
