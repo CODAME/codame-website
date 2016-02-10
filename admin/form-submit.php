@@ -1,6 +1,6 @@
 <?
 
-include('../../config/secrets.php');
+include('/home/gridwalk/config/secrets.php');
 
 // form was submitted
 if (!empty($_POST) && !$_POST['password']){

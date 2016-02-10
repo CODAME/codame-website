@@ -3,7 +3,7 @@
 session_start();
 
 // config
-include('../../config/secrets.php');
+include('/home/gridwalk/config/secrets.php');
 
 function db_connect(){
   include('config.php');
