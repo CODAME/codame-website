@@ -3,11 +3,11 @@
 session_start();
 
 // config
-$secrets_path = $_SERVER['DOCUMENT_ROOT'] . '/config/secrets.php';
+$secrets_path = $_SERVER['DOCUMENT_ROOT'] . '/../config/secrets.php';
 include($secrets_path);
 
 function db_connect(){
-  $secrets_path = $_SERVER['DOCUMENT_ROOT'] . '/config/secrets.php';
+  $secrets_path = $_SERVER['DOCUMENT_ROOT'] . '/../config/secrets.php';
   include($secrets_path);
   $con = mysqli_connect($mysql_host, $mysql_user, $mysql_pw, $mysql_db)
   or die( 'Could not connect: ' . mysqli_error($con) );
