@@ -3,7 +3,7 @@
 session_start();
 
 // config
-include('config.php');
+include('../../config/secrets.php');
 
 function db_connect(){
   include('config.php');

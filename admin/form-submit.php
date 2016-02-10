@@ -1,6 +1,6 @@
 <?
 
-include('config.php');
+include('../../config/secrets.php');
 
 // form was submitted
 if (!empty($_POST) && !$_POST['password']){
