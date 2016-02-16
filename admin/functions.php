@@ -429,4 +429,5 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
 
   }
 }
+
 ?>
