@@ -16,6 +16,9 @@
     <a href="<? echo $site_url ?>/admin/edit-single.php?action=add&table=pages">New Page</a>
     <a href="category.php?table=pages">All Pages</a>
     <hr>
+    <a href="<? echo $site_url ?>/admin/edit-single.php?action=add&table=sponsors">New Sponsor</a>
+    <a href="category.php?table=sponsors">All Sponsors</a>
+    <hr>
     <a href="logout.php">Log Out</a>                
   </div>
 

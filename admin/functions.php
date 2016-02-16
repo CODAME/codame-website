@@ -2,11 +2,12 @@
 
 session_start();
 
-// config
+// config vars
 $secrets_path = $_SERVER['DOCUMENT_ROOT'] . '/../config/secrets.php';
 include($secrets_path);
 
 function db_connect(){
+  // config vars
   $secrets_path = $_SERVER['DOCUMENT_ROOT'] . '/../config/secrets.php';
   include($secrets_path);
   $con = mysqli_connect($mysql_host, $mysql_user, $mysql_pw, $mysql_db)
@@ -86,8 +87,7 @@ function get_table($table, $offset, $limit, $order_by = ''){
 
   $query = "SELECT * FROM $table $order_by_clause $limit_clause";
 
-  $result = mysqli_query($con, $query)
-  or die(mysqli_error($con));
+  $result = mysqli_query($con, $query);
   
   return $result;
 
@@ -352,7 +352,7 @@ function output_sponsor($url,$pic,$name){
 
 
 function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
-
+  
   $results = get_table($table,$offset,$limit,$order_by);
   $results_array = array();
   
