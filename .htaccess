@@ -9,7 +9,7 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteRule ^artists\/?$ ./category.php?table=artists
 RewriteRule ^events\/?$ ./category.php?table=events
 RewriteRule ^projects\/?$ ./category.php?table=projects
-
+RewriteRule ^sponsors\/?$ ./category.php?table=sponsors
 
 # Singles:
 RewriteRule ^artists\/(.*)$ ./single.php?table=artists&slug=$1
