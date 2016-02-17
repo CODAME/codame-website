@@ -159,16 +159,6 @@
         }
       }
 
-
-      if( $content['twitter'] ){
-
-        echo '<a href="'.$content["twitter"].'" class="info-link">';
-        include('assets/twitter.svg');
-        echo $content['name'] . ' on Twitter';
-        echo '</a><hr>';
-
-      }
-
       if( $content['website'] ){
 
         echo '<a href="'.$content["website"].'" class="info-link">';
@@ -177,6 +167,15 @@
         echo '</a><hr>';
 
       }
+
+      if( $content['twitter'] ){
+
+        echo '<a href="'.$content["twitter"].'" class="info-link">';
+        include('assets/twitter.svg');
+        echo $content['name'] . ' on Twitter';
+        echo '</a><hr>';
+
+      }      
 
       ?>
 
