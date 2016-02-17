@@ -113,7 +113,10 @@ $noun = ucfirst(substr($table, 0, -1)); // noun for what is being edited. artist
 
       if( table == 'pages' ){
         $.ajax({
-          url: './api/generate_sidebar_pages.php'
+          url: './api/generate_sidebar_pages.php',
+          success:function(data){
+            console.log(data);
+          }
         });
       }
 
