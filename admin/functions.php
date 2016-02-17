@@ -150,6 +150,7 @@ function search_table( $table, $column, $search_term, $order_by = ''){
 }
 
 function generate_sidebar_pages($site_url){
+  
   $pages = get_table('pages',0,0);
   $links = '';
 
@@ -166,13 +167,13 @@ function generate_sidebar_pages($site_url){
   }
 
   // get the sidebar
-  $sidebar = file_get_contents('../sidebar.php');
+  $sidebar = file_get_contents($_SERVER["DOCUMENT_ROOT"] . '/sidebar.php');
 
   // the flags and everything between them with the new links
   $sidebar = preg_replace('/<!-- flag start -->.*<!-- flag end -->/', "<!-- flag start -->".$links."<!-- flag end -->", $sidebar);
 
   // save the sidebar
-  file_put_contents('../sidebar.php', $sidebar);
+  file_put_contents($_SERVER["DOCUMENT_ROOT"] . '/sidebar.php', $sidebar);
 
 }
 
