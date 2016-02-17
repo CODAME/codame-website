@@ -156,7 +156,7 @@ function generate_sidebar_pages($site_url){
 
   while($page = mysqli_fetch_assoc($pages)){
     
-    if( $page['hidden'] == 1 ){
+    if( $page['hidden'] == 1 || $page['hidden'] == '1' ){
       continue;
     }
 
