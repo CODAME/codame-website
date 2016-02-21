@@ -90,7 +90,11 @@
 
         if ( !empty($artists[0]) ){
 
+          // keep first artist listed in place, shuffle the rest of the artists
+
+          $first_artist = array_shift($artists);
           shuffle($artists); // mix it up
+          array_unshift($artists,$first_artist); // add the first back on
           
           echo "<h3>Artists:</h3>";
           foreach( $artists as $artist){
