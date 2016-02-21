@@ -89,6 +89,9 @@
         $artists = explode(',',$content['artists_array']);
 
         if ( !empty($artists[0]) ){
+
+          shuffle($artists); // mix it up
+          
           echo "<h3>Artists:</h3>";
           foreach( $artists as $artist){
             $artist_slug = $artist;
