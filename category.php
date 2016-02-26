@@ -31,6 +31,26 @@
         <? echo $table; ?>
       </h2>
 
+      <div id="hero">
+      
+        <? $header = get_row('headers','slug',$table); ?>
+
+        <? if( $header['pic'] !== '' ){ ?>
+          <a href="<? echo $header['banner-link-url'] ?>">
+            <img src="<? echo $header['pic'] ?>">
+          </a>
+        <? } ?>
+
+        <? if( $header['description'] !== '' ){ ?>
+
+          <div class="hero-text">
+            <? echo $header['description'] ?>
+          </div>
+
+        <? } ?>
+        
+      </div>
+
       <div class="tiles">
         <? output_results($table,0,0,'tiles',$order_by); ?>
       </div>
