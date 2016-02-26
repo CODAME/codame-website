@@ -76,10 +76,20 @@
 }
 @media (max-width: 650px) {
   .column{
-    width: 90%;
-  }
-  .content-block, .content-block img{
-    width: 100%;
+    width: 50%;
+    float: left;
+
+    .bar-link{
+      padding: 0 15px!important;
+      margin: 0;
+    }
+    .inner-column{
+      padding:0px 15px!important;
+    }
+
+    &:nth-of-type(2){
+      float: right;
+    }
   }
   .more-link{
     display: none;
@@ -140,24 +150,6 @@
     margin-top: 0px;
     width: 100%;
     padding: 0;
-  }
-  
-  .column{
-    width: 50%;
-    float: left;
-
-    .bar-link{
-      padding: 0 15px!important;
-      margin: 0;
-    }
-    .inner-column{
-      padding:0px 15px!important;
-    }
-
-    &:nth-of-type(2){
-      float: right;
-    }
-
   }
 
   // single artist, event, or project pages
