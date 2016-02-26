@@ -11,17 +11,22 @@
   <div id="content">
     
     <div id="hero">
-      <?      
-      $header = get_row('headers','slug','homepage');
-      if( $header['pic'] !== '' ){?>
+      
+      <? $header = get_row('headers','slug','homepage'); ?>
+
+      <? if( $header['pic'] !== '' ){ ?>
         <a href="<? echo $header['banner-link-url'] ?>">
           <img src="<? echo $header['pic'] ?>">
         </a>
       <? } ?>
-      <div class="hero-text">
-        <h1>Announcing the launch of <a href='http://labs.codame.com'>CODAME Labs</a>, a dedicated studio for research and development led by Dutch Fashiontech designer Anouk Wipprecht.</h1>
-        <h2> Submit an <a href="http://codame.com/pages/call-for-proposals">Artist Proposal</a>, or get involved as a <a href="http://codame.com/pages/call-for-volunteers">Volunteer</a> or <a href="http://codame.com/pages/partners-sponsorship-enquiry">Partner</a>.</h2>
-      </div>
+
+      <? if( $header['description'] !== '' ){ ?>
+
+        <div class="hero-text">
+          <? echo $header['description'] ?>
+        </div>
+
+      <? } ?>
       
     </div>
 

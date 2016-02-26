@@ -172,14 +172,22 @@ if (!empty($_POST) && !$_POST['password']){
     }
 
     // sponsor row
-      if( $table == 'sponsors' ){
-        $row_array = array(
-          'name'    => $name,
-          'slug'    => $slug,
-          'pic'     => $pic,
-          'website' => $_POST['website']
-        );
-      }
+    if( $table == 'sponsors' ){
+      $row_array = array(
+        'name'    => $name,
+        'slug'    => $slug,
+        'pic'     => $pic,
+        'website' => $_POST['website']
+      );
+    }
+
+    if( $table == 'headers' ){
+      $row_array = array(
+        'pic'             => $pic,
+        'banner-link-url' => $_POST['banner-link-url'],
+        'description'     => $_POST['description']
+      );
+    }
 
     foreach ($row_array as $key => $value) {
       update_field($table,'slug',$old_slug,$key,$value);
@@ -196,6 +204,8 @@ if (!empty($_POST) && !$_POST['password']){
     echo $error;
   }else if( $table == 'sponsors' ){
     echo "<script>location.href='$site_url/admin/category.php?table=sponsors'</script>";  
+  }else if( $table == 'headers' ){
+    echo "<script>location.href='$site_url'</script>";  
   }else{
     // die;
     echo "<script>location.href='$site_url/$table/$slug'</script>";  

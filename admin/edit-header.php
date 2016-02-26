@@ -4,7 +4,7 @@ include('head.php');
 include('form-submit.php');
  
 $slug    = $_GET['slug'];  
-$content = get_row('category-headers','slug',$slug);
+$content = get_row('headers','slug',$slug);
 $pic     = get_image_size('large',$content['pic']);
 
 ?>
@@ -22,9 +22,18 @@ $pic     = get_image_size('large',$content['pic']);
 
         <!-- Hidden form fields -->
 
+        <!-- Tells form-submit.php what table to update -->
+        <input type="hidden" name="table" value="headers" />
+
+        <!-- edit an entry -->
+        <input type="hidden" name="action" value="edit" />
+
         <!-- initial pic value when editing. saved here because it would get overwritten by an empty value -->
         <input type="hidden" name="pic" value="<? echo $content['pic'] ?>" />
         
+        <!-- this slug is used when editing an existing entry. -->
+        <input type="hidden" name="slug" value="<? echo $slug ?>" />
+
         <!-- API Key. Verifies that the form submission is from our server. -->
         <input type="hidden" name="api-key" value="<? echo $codame_api_key ?>" />        
 
@@ -55,7 +64,28 @@ $pic     = get_image_size('large',$content['pic']);
           </div>
         </fieldset>
 
+        <fieldset>
+          <label>
+            <span> Description <b>*</b></span>
+            <textarea name="description" />
+              <? echo $content['description'] ?>
+            </textarea>
+          </label>
+        </fieldset>
+
       </form>
 
     </div>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript">
+      tinymce.init({
+          selector: "textarea",
+          height: 500,
+          // theme:'advanced',
+          relative_urls : false,
+          plugins : 'advlist autolink link image media jbimages code textcolor pagebreak table',
+          toolbar: "jbimages | styleselect | table | forecolor backcolor | undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | pagebreak | bullist numlist outdent indent | link unlink | removeformat | code",
+       });
+    </script>
 </body>
