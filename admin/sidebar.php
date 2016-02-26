@@ -4,6 +4,8 @@
   </a>
 
   <div id="links">
+    <a href="<? echo $site_url ?>/admin/edit-header.php?slug=homepage">Edit Homepage Header</a>
+    <hr>
     <a href="<? echo $site_url ?>/admin/edit-single.php?action=add&table=artists">New Artist</a>
     <a href="category.php?table=artists">All Artists</a>
     <hr>

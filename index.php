@@ -7,11 +7,27 @@
 
   <? include('header.php') ?>
   <? include('sidebar.php') ?>
+  
   <div id="content">
+    
+    <div id="hero">
+      <?      
+      $header = get_row('headers','slug','homepage');
+      if( $header['pic'] !== '' ){?>
+        <a href="<? echo $header['banner-link-url'] ?>">
+          <img src="<? echo $header['pic'] ?>">
+        </a>
+      <? } ?>
+      <div class="hero-text">
+        <h1>Announcing the launch of <a href='http://labs.codame.com'>CODAME Labs</a>, a dedicated studio for research and development led by Dutch Fashiontech designer Anouk Wipprecht.</h1>
+        <h2> Submit an <a href="http://codame.com/pages/call-for-proposals">Artist Proposal</a>, or get involved as a <a href="http://codame.com/pages/call-for-volunteers">Volunteer</a> or <a href="http://codame.com/pages/partners-sponsorship-enquiry">Partner</a>.</h2>
+      </div>
+      
+    </div>
 
     <!-- EVENTS -->
 
-    <div class="column" id="events">
+    <section class="column" id="events">
       <a href="<? echo $site_url; ?>/events" class="bar-link">
         <h2>
           Events
@@ -26,11 +42,11 @@
         All past CODAME EVENTS
       </a>
 
-    </div>
+    </section>
 
     <!-- ARTISTS -->
 
-    <div class="column">
+    <section class="column">
       <a href="<? echo $site_url; ?>/artists" class="bar-link">
         <h2>
           Artists
@@ -43,11 +59,11 @@
       <a href="<? echo $site_url; ?>/artists" class="more-link">
         All CODAME featured ARTISTS
       </a>
-    </div>
+    </section>
 
     <!-- PROJECTS -->
 
-    <div class="column">
+    <section class="column">
       <a href="<? echo $site_url; ?>/projects" class="bar-link">
         <h2>
           Projects
@@ -59,7 +75,7 @@
       <a href="<? echo $site_url; ?>/projects" class="more-link">
         All CODAME adoptable PROJECTS
       </a>
-    </div>
+    </section>
 
     
 

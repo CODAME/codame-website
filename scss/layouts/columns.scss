@@ -1,22 +1,40 @@
 .column{
   float: left;
-  width: 33%;
+  width: 33.33%;
+  .bar-link{
+    padding: 0 15px 0 15px;
+  }
+  .inner-column{
+    padding:0px 15px 0 15px;
+  }
 }
-.column:first-child .bar-link{
-  padding-left: 15px;
+
+.column:first-of-type{
+ .bar-link{
+    padding: 0 15px 0 0;
+  }
+  .inner-column{
+    padding:0px 15px 0 0;
+  }  
 }
-.column:last-child .bar-link{
-  padding-right: 15px;
+
+.column:last-of-type{
+ .bar-link{
+    padding: 0 0 0 15px;
+  }
+  .inner-column{
+    padding:0px 0 0 15px;
+  }  
 }
-.inner-column{
-  padding:0px 15px;
-}
+
+
 .content-block{
   position: relative;
   float: left;
   text-decoration: none;
   margin-bottom: 30px;
   max-width: 100%;
+  border:1px solid #333;
 
   .date {
     position: absolute;
