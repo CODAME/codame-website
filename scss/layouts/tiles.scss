@@ -68,22 +68,28 @@
   background-size:contain;
 }
 
+a.bar-link:hover{
+  color:#fff;
+}
 .bar-link{
   text-decoration: none;
   color: #DFDFDF;
   float: left;
   width: 100%;
-}
-a.bar-link:hover{
-  color:#fff;
-}
-h2.bar-link, .bar-link>h2{
-  text-transform: uppercase;
-  font-size: 30px;
   background: #1D1A1C;
-  padding: 10px;
-  font-weight: lighter;
   border: 1px solid #333;
   border-left: 0;
   border-right: 0;
+  padding-left: 10px;
+  margin: 20px 0;
+  h2{
+    font-weight: normal;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 10px 0;
+    margin: 0;
+  }
+  p{
+    margin: 0 0 10px;
+  }
 }

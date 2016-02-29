@@ -27,28 +27,22 @@
   <? include('sidebar.php') ?>
   <div id="content">
 
-      <h2 class="bar-link">
-        <? echo $table; ?>
-      </h2>
+      <? $header = get_row('headers','slug',$table); ?>
+      <? if( $header['pic'] !== '' ){ ?>
+        <a href="<? echo $header['banner-link-url'] ?>">
+          <img src="<? echo $header['pic'] ?>">
+        </a>
+      <? } ?>
 
-      <div id="hero">
-      
-        <? $header = get_row('headers','slug',$table); ?>
-
-        <? if( $header['pic'] !== '' ){ ?>
-          <a href="<? echo $header['banner-link-url'] ?>">
-            <img src="<? echo $header['pic'] ?>">
-          </a>
-        <? } ?>
-
+      <div class="bar-link">
+        <h2><? echo $table; ?></h2>
         <? if( $header['description'] !== '' ){ ?>
 
-          <div class="hero-text">
+          <!-- <p class="hero-text"> -->
             <? echo $header['description'] ?>
-          </div>
+          <!-- </p> -->
 
         <? } ?>
-        
       </div>
 
       <div class="tiles">
