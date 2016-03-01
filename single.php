@@ -28,9 +28,11 @@
   <div id="container">
     <div id="content" class="article <? echo $class ?>">
 
-        <h2 class="bar-link">
-          <? echo $content['name']; ?>
-        </h2>
+        <div class="bar-link">
+          <h2>
+            <? echo $content['name']; ?>
+          </h2>
+        </div>
 
         <? if( !empty( $content['pic'] ) ){ ?>
           <img src="<? echo $content['pic']; ?>" alt="<? echo $content['name']; ?>" />
