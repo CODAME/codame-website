@@ -74,7 +74,8 @@ if( $action == "edit" ){
 
           <label>
             <span>Main Picture <b>*</b></span>
-            <input type="file" name="pic" value="<? echo $content['pic'] ?>" />
+            <input type="file" name="pic" value="<? echo $content['pic'] ?>" accept="image/*" />
+            <button type='button' id='remove-picture'>Remove Picture</button>
           </label>
 
         </fieldset>
@@ -176,6 +177,7 @@ if( $action == "edit" ){
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="js/tinymce/tinymce.min.js"></script>
   <script type="text/javascript">
+
     tinymce.init({
         selector: "textarea",
         height: 500,
@@ -184,6 +186,15 @@ if( $action == "edit" ){
         plugins : 'advlist autolink link image media jbimages code textcolor pagebreak table',
         toolbar: "jbimages | styleselect | table | forecolor backcolor | undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | pagebreak | bullist numlist outdent indent | link unlink | removeformat | code",
      });
+
+    $('#remove-picture').click(function(){
+      deletePic = confirm('Delete the picture?')
+      if( deletePic ){
+        $('input[name=pic]').val('')
+        $('.thumbnail').hide()
+      }
+    })
+
   </script>
 
   <!-- JS for events and projects. Allows tagging artists onto events and projects -->
