@@ -12,7 +12,7 @@ function db_connect(){
   include($secrets_path);
 
   $con = mysqli_connect($mysql_host, $mysql_user, $mysql_pw, $mysql_db)
-  or die( 'Could not connect: ' . mysqli_error($con) );
+  or die( 'Could not connect: ' . mysqli_error($con) . ' // if local check allowed IPs for DB' );
   return $con;
 }
 
