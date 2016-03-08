@@ -4,6 +4,8 @@
     <img id="logo" src="<? echo $site_url; ?>/assets/codame-logo-alpha.png" alt="CODAME Art+Tech" />
   </a>
 
+  <h1>ART+TECH nonprofit events to inspire through experience.</h1>
+
   <div id="menu-button" onclick="toggle_menu();">
     MENU
   </div>

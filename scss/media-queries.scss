@@ -75,6 +75,9 @@
   }
 }
 @media (max-width: 650px) {
+  #sidebar h1{
+    display: none;
+  }
   .column{
     width: 50%;
     float: left;
