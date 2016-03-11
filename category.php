@@ -36,13 +36,11 @@
 
       <div class="bar-link">
         <h2><? echo $table; ?></h2>
-        <? if( $header['description'] !== '' ){ ?>
-
-          <!-- <p class="hero-text"> -->
-            <? echo $header['description'] ?>
-          <!-- </p> -->
-
-        <? } ?>
+        <?
+        if( $header['description'] !== '' ){
+          echo $header['description']
+        }
+        ?>
       </div>
 
       <div class="tiles">

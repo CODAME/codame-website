@@ -20,13 +20,7 @@
         </a>
       <? } ?>
 
-      <? if( $header['description'] !== '' ){ ?>
-
-        <div class="hero-text">
-          <? echo $header['description'] ?>
-        </div>
-
-      <? } ?>
+      
       
     </div>
 
