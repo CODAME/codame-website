@@ -38,7 +38,7 @@
         <h2><? echo $table; ?></h2>
         <?
         if( $header['description'] !== '' ){
-          echo $header['description']
+          echo $header['description'];
         }
         ?>
       </div>
