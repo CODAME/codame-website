@@ -1,5 +1,5 @@
 <?
-if( $_SESSION['logged_in'] == true ){
+if( isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true ){
 
   $edit_url = $site_url ."/admin";
 

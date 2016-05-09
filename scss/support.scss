@@ -1,0 +1,174 @@
+.support-content{
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 40px;
+  @media only screen and (max-width: 500px){
+    padding: 0 10px;
+  }
+
+  #logo-link{
+    width: 100px;
+    display: inline-block;
+    margin: 20px 0;
+  }
+
+  .artist-section{
+    position: relative;
+      margin-bottom: 20px;
+    .artist-main{
+      max-height:300px;
+    }
+    .name{
+      font-size: 24px;
+      font-weight: 600;
+      position: absolute;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.74);
+      width: 100%;
+      margin: 0;
+      padding: 10px 0;
+    }
+  }
+ 
+  .commission-headline{
+    text-transform:capitalize;
+    display: block;
+    margin: 0px 0 20px;
+    padding: 20px 0;
+    border-top: 2px solid rgba(149,243,245,.19);
+    border-bottom: 2px solid rgba(149,243,245,.19);
+    @media only screen and (max-width: 500px){
+      margin-top: 20px;
+      text-align: right;
+      padding-right: 20px;
+      font-size:22px;
+    }
+  }
+
+  .options{
+    overflow: auto;
+  }
+
+  .options>div {
+    width: 33.333%;
+    float: left;
+    padding: 10px;
+    font-size: 18px;
+    @media only screen and (max-width: 500px){
+      width: 100%;
+    }
+  }
+
+  .options svg{
+    width: 40px;
+    fill: #fff;
+    display: block;
+    margin: 0px auto 10px;
+  }
+
+  .options div span{
+    display: inline-block;
+  }
+  .magenta-blur{
+    margin-bottom: -50px;
+    margin-left: -10px;
+    svg{
+      fill:rgba(255, 0, 255, 0.55);
+    }
+  }
+  .cyan-blur{
+    margin-bottom: -50px;
+    margin-right: -5px;
+    svg{
+      fill:rgba(121, 231, 255, 0.72);
+    }
+  }
+
+  .explanation{
+    padding: 40px 0;
+    font-size: 24px;
+    border-top: 2px solid rgba(149,243,245,.19);
+    border-bottom: 2px solid rgba(149,243,245,.19);
+    margin: 40px 0;
+  }
+
+  .cta{
+    
+    margin: 0 auto 40px;
+    background: #fff;
+    padding: 15px;
+    box-shadow: -4px -4px 0 rgba(255,0,255,.73),4px 4px 0 rgba(0,255,255,.81);
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.75em;
+    a{
+      color:#BD0AFF;
+      padding:0px 10px;
+      text-decoration: none;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .contact{
+    border-top: 2px solid rgba(149,243,245,.19);
+    padding: 40px 0;
+    span{
+      display: block;
+    }
+    form{
+      display: block;
+      max-width: 600px;
+      margin: 40px auto 0;
+      padding: 40px 30px 20px;
+      border: 2px solid rgba(149,243,245,.19);
+      border-radius: 10px;
+      overflow: auto;
+      text-align: left;
+      label {
+        float: left;
+        display: block;
+        width: 50%;
+        margin-bottom: 10px;
+        padding: 0 10px;
+        @media only screen and (max-width: 500px){
+          width: 100%;
+        }
+        span {
+          display: block;
+          font-size: 12px;
+        }
+        i{
+          font-style: normal;
+          color: #FF4D4D;
+          margin-right: 2px;
+        }
+      }
+      input, select, textarea {
+        -webkit-appearance: none;
+        width: 100%;
+        background-color: #666;
+        border: 1px solid #fff;
+        border-radius: 3px;
+        margin: 5px 0 0 0;
+        padding: 5px 10px;
+        min-height: 40px;
+        box-shadow: inset 2px 2px #444;
+        color: #fff;
+      }
+      label[for='message'], label[for='submit'] {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      input[type="submit"] {
+        box-shadow: 2px 2px #000;
+        background-color: #9B48AB;
+        cursor: pointer;
+      }
+    }
+  }
+
+}
