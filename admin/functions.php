@@ -181,7 +181,7 @@ function generate_sidebar_pages($site_url){
 function get_image_size( $size, $image_url ){
 
   if( $size == "small" ){
-    $ext = '.' . end(explode(".", $image_url ));
+    $ext = '.'.pathinfo($image_url, PATHINFO_EXTENSION);
     $image_url = str_replace($ext, '-small'.$ext, $image_url);    
     return $image_url;
   }
@@ -389,7 +389,9 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
     $name = $result['name'];
     $slug = $result['slug'];
     $pic  = get_image_size('small',$result['pic']);
-    $date = date("d M", strtotime($result['date']));
+    if( !empty($result['date']) ){
+      $date = date("d M", strtotime($result['date']));  
+    }    
     
     // tiles layout
 
