@@ -47,6 +47,13 @@
 
       <?
 
+      // COMMISSION THIS ARTIST
+      if( $table == 'artists' ){
+
+        // echo '<img src="../assets/commission-this-artist.png" />';
+
+      }      
+
       // RELATED POSTS
 
       // For artist page OR project page: show events
