@@ -1,9 +1,11 @@
 .column{
   float: left;
-  width: 33.33%;
+  width: 50%;
   padding: 0 15px;
   .bar-link {
     margin-bottom: 30px;
+    float: none;
+    display: block;
   }
 }
 
@@ -21,8 +23,12 @@
   float: left;
   text-decoration: none;
   margin-bottom: 30px;
-  max-width: 100%;
+  width: 100%;
   border:1px solid #333;
+
+  >img{
+    width: 100%;
+  }
 
   .date {
     position: absolute;
@@ -42,4 +48,26 @@
   color:#00a4a7;
   float: left;
   padding-left: 15px;
+}
+
+#events.column{
+  width: 60%;
+}
+
+#projects.column{
+  width: 40%;
+  .inner-column{
+    display: -ms-flexbox;
+    -ms-flex-direction: column;
+    -ms-flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100vh;
+    overflow: hidden;
+  } 
+  .content-block{
+    width: 48%;
+    margin: 1%;
+  }
 }

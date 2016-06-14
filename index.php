@@ -49,33 +49,16 @@
 
     </section>
 
-    <!-- ARTISTS -->
-
-    <section class="column">
-      <a href="<? echo $site_url; ?>/artists" class="bar-link">
-        <h2>
-          Artists
-        </h2>
-      </a>
-      <div class='inner-column'>
-        <? output_results('artists',0,6,'blocks','edited'); ?>
-      </div>
-
-      <a href="<? echo $site_url; ?>/artists" class="more-link">
-        All CODAME featured ARTISTS
-      </a>
-    </section>
-
     <!-- PROJECTS -->
 
-    <section class="column">
+    <section class="column" id='projects'>
       <a href="<? echo $site_url; ?>/projects" class="bar-link">
         <h2>
           Projects
         </h2>
       </a>
       <div class='inner-column'>
-        <? output_results('projects',0,6,'blocks','edited'); ?>
+        <? output_results('projects',0,14,'blocks','edited'); ?>
       </div>
       <a href="<? echo $site_url; ?>/projects" class="more-link">
         All CODAME adoptable PROJECTS

@@ -175,7 +175,7 @@
         }
       }
 
-      if( $content['website'] ){
+      if( !empty($content['website']) ){
 
         echo '<a href="'.$content["website"].'" class="info-link">';
         include('assets/network.svg');
@@ -184,7 +184,7 @@
 
       }
 
-      if( $content['twitter'] ){
+      if( !empty($content['twitter']) ){
 
         echo '<a href="'.$content["twitter"].'" class="info-link">';
         include('assets/twitter.svg');

@@ -76,6 +76,8 @@ function get_table($table, $offset, $limit, $order_by = ''){
 
   if( $limit > 0 ){
     $limit_clause = "LIMIT $offset, $limit ";
+  }else{
+    $limit_clause = '';
   }
 
   if( $order_by !== '' && $table !== 'sponsors'){
