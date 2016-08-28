@@ -49,21 +49,3 @@
   float: left;
   padding-left: 15px;
 }
-
-#projects.column{
-  .inner-column{
-    display: -ms-flexbox;
-    -ms-flex-direction: column;
-    -ms-flex-wrap: wrap;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 150vh;
-    max-height: 1400px;
-    overflow: hidden;
-  } 
-  .content-block{
-    width: 48%;
-    margin: 1%;
-  }
-}
