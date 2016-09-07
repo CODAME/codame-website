@@ -9,26 +9,6 @@
   <? include('sidebar.php') ?>
   
   <div id="content">
-    
-    <div id="hero">
-      
-      <? $header = get_row('headers','slug','homepage'); ?>
-
-      <? if( $header['pic'] !== '' ){ ?>
-        <a href="<? echo $header['banner-link-url'] ?>">
-          <img src="<? echo $header['pic'] ?>">
-        </a>
-      <? } ?>
-
-      <? if( $header['description'] !== '' ){ ?>
-
-        <div class="hero-text">
-          <? echo $header['description'] ?>
-        </div>
-
-      <? } ?>
-      
-    </div>
 
     <!-- EVENTS -->
 
