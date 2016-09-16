@@ -4,6 +4,9 @@ RewriteEngine On
 RewriteCond %{SCRIPT_FILENAME} !-d  
 RewriteCond %{SCRIPT_FILENAME} !-f
 
+# any redirects that were created while this site has been live
+# They are above the general logic because they must happen before the parser hits the general logic.
+rewriterule ^projects/modbod3d(.*)$ http://codame.com/projects/modbod$1 [r=301,nc]
 
 # Categories: 
 RewriteRule ^artists\/?$ ./category.php?table=artists
@@ -20,8 +23,6 @@ RewriteRule ^pages\/(.*)$ ./single.php?table=pages&slug=$1
 
 # Massive Legacy Redirect List:
 # The following rules are to preserve links to our old site.
-
-rewriterule ^projects/modbod3d(.*)$ http://codame.com/projects/modbod$1 [r=301,nc]
 rewriterule ^post/portfolio/josh-carpenter/(.*)$ http://codame.com/artists/josh-carpenter$1 [r=301,nc]
 rewriterule ^post/portfolio/theuriah/(.*)$ http://codame.com/artists/theuriah$1 [r=301,nc]
 rewriterule ^post/portfolio/jasper-paterson/(.*)$ http://codame.com/artists/jasper-patterson$1 [r=301,nc]
