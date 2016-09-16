@@ -21,6 +21,7 @@ RewriteRule ^pages\/(.*)$ ./single.php?table=pages&slug=$1
 # Massive Legacy Redirect List:
 # The following rules are to preserve links to our old site.
 
+rewriterule ^projects/modbod3d(.*)$ http://codame.com/projects/modbod$1 [r=301,nc]
 rewriterule ^post/portfolio/josh-carpenter/(.*)$ http://codame.com/artists/josh-carpenter$1 [r=301,nc]
 rewriterule ^post/portfolio/theuriah/(.*)$ http://codame.com/artists/theuriah$1 [r=301,nc]
 rewriterule ^post/portfolio/jasper-paterson/(.*)$ http://codame.com/artists/jasper-patterson$1 [r=301,nc]
