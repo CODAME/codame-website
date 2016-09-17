@@ -20,12 +20,8 @@
       </a>
 
       <div class='inner-column'>
-        <? output_results('events',0,6,'blocks','date'); ?>
+        <? output_results('events',0,0,'blocks','date'); ?>
       </div>
-
-      <a href="<? echo $site_url; ?>/events" class="more-link">
-        All past CODAME EVENTS
-      </a>
 
     </section>
 
@@ -38,14 +34,9 @@
         </h2>
       </a>
       <div class='inner-column'>
-        <? output_results('projects',0,14,'blocks','edited'); ?>
+        <? output_results('projects',0,0,'blocks','edited'); ?>
       </div>
-      <a href="<? echo $site_url; ?>/projects" class="more-link">
-        All CODAME adoptable PROJECTS
-      </a>
     </section>
-
-    
 
   </div>
   <? include('footer.php') ?>
