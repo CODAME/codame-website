@@ -386,7 +386,9 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
 
   // output all the results
 
-  foreach( $results_array as $result ){
+  foreach( $results_array as $key=>$result ){
+    
+    echo $key;
 
     $name = $result['name'];
     $slug = $result['slug'];
