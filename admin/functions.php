@@ -427,7 +427,7 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
       
       // output the image.
       // if it is within the first few, don't let it be lazy
-      if( $result_number < 5 ){
+      if( $result_number < 3 ){
         echo "<img src='$pic' />";  
       }else{
         echo "<img class='lazy' data-src='$pic' src='/assets/blank.gif' height='150' />";
