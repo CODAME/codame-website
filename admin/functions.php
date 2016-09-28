@@ -386,9 +386,8 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
 
   // output all the results
 
-  foreach( $results_array as $key=>$result ){
-    
-    echo $key;
+  $result_number = 0;
+  foreach( $results_array as $result ){
 
     $name = $result['name'];
     $slug = $result['slug'];
@@ -435,6 +434,9 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
 
     }
 
+    echo $result_number;
+    $result_number++;
+    
   }
 }
 
