@@ -423,7 +423,7 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
     if( $layout_type == 'blocks' ){
 
       echo "<a href='$table/$slug' class='content-block'>";
-      echo "<img class='lazy' data-src='$pic' src='/assets/blank.gif' />";
+      echo "<img class='lazy' data-src='$pic' src='/assets/blank.gif' height='150' />";
       if( $table == 'events'){
         echo "  <span>$name <div class='date'>$date</div></span>";
       }else{
