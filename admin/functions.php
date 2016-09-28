@@ -424,7 +424,15 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
     if( $layout_type == 'blocks' ){
 
       echo "<a href='$table/$slug' class='content-block'>";
-      echo "<img class='lazy' data-src='$pic' src='/assets/blank.gif' height='150' />";
+      
+      // output the image.
+      // if it is within the first few, don't let it be lazy
+      if( $result_number < 5 ){
+        echo "<img src='$pic' />";  
+      }else{
+        echo "<img class='lazy' data-src='$pic' src='/assets/blank.gif' height='150' />";
+      }
+      
       if( $table == 'events'){
         echo "  <span>$name <div class='date'>$date</div></span>";
       }else{
@@ -434,7 +442,6 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
 
     }
 
-    echo $result_number;
     $result_number++;
     
   }
