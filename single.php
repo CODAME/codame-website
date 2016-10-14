@@ -91,6 +91,26 @@
         
       }
 
+      // For event page: show projects
+      if( $table == 'events' ){
+
+        $projects = explode(',',$content['projects_array']);
+        if ( !empty($projects[0]) ){
+          echo "<h3>Projects:</h3>";
+          foreach( $projects as $project){
+            $project_slug = $project;
+            $project = get_row('projects','slug',$project);
+
+            $pic  = $project['pic'];
+            $name = $project['name'];
+            $url  = $site_url.'/projects/'.$project_slug;
+
+            output_related_post($url,$pic,$name);
+          }
+        }
+
+      }
+
       // For event page OR project page: show artists
 
       if( $table == 'events' || $table == 'projects' ){
@@ -119,26 +139,9 @@
         }
       }
 
-      // event page: show projects and sponsors
+      // For event page: show sponsors
       if( $table == 'events' ){
-        
-        // projects
-        $projects = explode(',',$content['projects_array']);
-        if ( !empty($projects[0]) ){
-          echo "<h3>Projects:</h3>";
-          foreach( $projects as $project){
-            $project_slug = $project;
-            $project = get_row('projects','slug',$project);
-            
-            $pic  = $project['pic'];
-            $name = $project['name'];
-            $url  = $site_url.'/projects/'.$project_slug;
 
-            output_related_post($url,$pic,$name);
-          }
-        }
-
-        // sponsors
         $sponsors = explode(',',$content['sponsors_array']);
         if ( !empty($sponsors[0]) ){
           echo "<h3>Sponsored By:</h3>";
@@ -156,7 +159,7 @@
 
       }
 
-      // artists page: show projects
+      // For artists page: show projects
       if( $table == 'artists' ){
         $projects = search_table('projects','artists_array',$slug);
         if( mysqli_num_rows( $projects ) ){
