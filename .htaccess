@@ -4,9 +4,10 @@ RewriteEngine On
 RewriteCond %{SCRIPT_FILENAME} !-d  
 RewriteCond %{SCRIPT_FILENAME} !-f
 
-# any redirects that were created while this site has been live
+# any redirects that were created while this site has been live:
 # They are above the general logic because they must happen before the parser hits the general logic.
 rewriterule ^projects/modbod3d(.*)$ http://codame.com/projects/modbod$1 [r=301,nc]
+rewriterule ^artex(.*)$ http://codame.com/events/artificial-experiences$1 [r=301,nc]
 
 # Categories: 
 RewriteRule ^artists\/?$ ./category.php?table=artists
