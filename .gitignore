@@ -1,3 +1,5 @@
+config/secrets.php
+
 # OS generated files #
 ######################
 .DS_Store
