@@ -7,7 +7,8 @@
 1. Download and install NodeJS
 2. Download and install MAMP / MAMP Pro
 3. Download codame-website repository and `npm install`
-4. Run `gulp` to initialize the site in the `/dist` folder.
+4. Install gulp globally by running `npm install gulp -g`
+5. Run `gulp` to initialize the site in the `/dist` folder.
 
 ### Set up
 
