@@ -393,6 +393,7 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
     $slug = $result['slug'];
     $pic  = get_image_size('small',$result['pic']);
     if( !empty($result['date']) ){
+      date_default_timezone_set('America/Los_Angeles');
       $date = date("d M", strtotime($result['date']));  
     }    
     
