@@ -57,10 +57,6 @@
         <? include('assets/flickr.svg') ?>
       </a>
 
-      <a href="https://vine.co/tags/codame">
-        <? include('assets/vine.svg') ?>
-      </a>
-
       <a href="https://www.linkedin.com/company/codame">
         <? include('assets/linkedin.svg') ?>
       </a>
