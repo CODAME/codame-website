@@ -1,7 +1,7 @@
 # Allow Rewrites:
-Options +FollowSymLinks  
-RewriteEngine On  
-RewriteCond %{SCRIPT_FILENAME} !-d  
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
 # any redirects that were created while this site has been live:
@@ -9,7 +9,10 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 rewriterule ^projects/modbod3d(.*)$ http://codame.com/projects/modbod$1 [r=301,nc]
 rewriterule ^artex(.*)$ http://codame.com/events/artificial-experiences$1 [r=301,nc]
 
-# Categories: 
+# remove trailing slash
+RewriteRule (.*)/$ /$1 [L,R=301]
+
+# Categories:
 RewriteRule ^artists\/?$ ./category.php?table=artists
 RewriteRule ^events\/?$ ./category.php?table=events
 RewriteRule ^projects\/?$ ./category.php?table=projects
