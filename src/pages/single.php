@@ -9,7 +9,7 @@
   $slug  = $_GET['slug'];
 
   // this should be an option in edit-single.php, rather than forced like this
-  if( $slug == 'sponsors' ){
+  if( $slug == 'sponsors' || $slug  == 'partners' ){
     $class = 'white-bg';
   }else{
     $class = '';

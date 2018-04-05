@@ -9,14 +9,12 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 rewriterule ^projects/modbod3d(.*)$ http://codame.com/projects/modbod$1 [r=301,nc]
 rewriterule ^artex(.*)$ http://codame.com/events/artificial-experiences$1 [r=301,nc]
 
-# remove trailing slash
-RewriteRule (.*)/$ /$1 [L,R=301]
-
 # Categories: 
 RewriteRule ^artists\/?$ ./category.php?table=artists
 RewriteRule ^events\/?$ ./category.php?table=events
 RewriteRule ^projects\/?$ ./category.php?table=projects
 RewriteRule ^sponsors\/?$ ./category.php?table=sponsors
+RewriteRule ^partners\/?$ ./category.php?table=partners
 
 # Singles:
 RewriteRule ^artists\/(.*)$ ./single.php?table=artists&slug=$1
