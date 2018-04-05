@@ -101,6 +101,16 @@ if (!empty($_POST) && !$_POST['password']){
           'website' => $_POST['website']
         );
       }
+      
+      // partner row
+      if( $table == 'partners' ){
+        $row_array = array(
+          'name'    => $name,
+          'slug'    => $slug,
+          'pic'     => $pic,
+          'website' => $_POST['website']
+        );
+      }
 
       insert_row($table, $row_array);
 
@@ -180,6 +190,16 @@ if (!empty($_POST) && !$_POST['password']){
         'website' => $_POST['website']
       );
     }
+    
+    // partner row
+    if( $table == 'partners' ){
+      $row_array = array(
+        'name'    => $name,
+        'slug'    => $slug,
+        'pic'     => $pic,
+        'website' => $_POST['website']
+      );
+    }
 
     if( $table == 'headers' ){
       $row_array = array(
@@ -204,6 +224,8 @@ if (!empty($_POST) && !$_POST['password']){
     echo $error;
   }else if( $table == 'sponsors' ){
     echo "<script>location.href='$site_url/admin/category.php?table=sponsors'</script>";  
+  }else if( $table == 'partners' ){
+    echo "<script>location.href='$site_url/admin/category.php?table=partners'</script>";  
   }else if( $table == 'headers' ){
     echo "<script>location.href='$site_url'</script>";  
   }else{

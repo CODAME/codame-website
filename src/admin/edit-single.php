@@ -95,7 +95,7 @@ if( $action == "edit" ){
 
         <!-- Fields for artists, projects, sponsors (website) -->
 
-        <? if( $table == 'artists' || $table == 'projects' || $table == 'sponsors' ){ ?>
+        <? if( $table == 'artists' || $table == 'projects' || $table == 'sponsors' || $table == 'partners' ){ ?>
 
           <label>
             <span><? echo $noun ?> Website URL</span>
