@@ -136,6 +136,7 @@ if (!empty($_POST) && !$_POST['password']){
         'artists_array'  => $_POST['artists-array'],
         'projects_array' => $_POST['projects-array'],
         'sponsors_array' => $_POST['sponsors-array'],
+        'partners_array' => $_POST['partners-array'],
         'old_url'        => $_POST['old-url']
       );
     }

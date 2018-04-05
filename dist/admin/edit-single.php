@@ -139,6 +139,11 @@ if( $action == "edit" ){
             <span>Sponsored By</span>
             <input name="sponsors-array" id="sponsors-array" value="<? echo $content['sponsors_array']; ?>" />
           </label>
+          
+          <label>
+            <span>Partnered With</span>
+            <input name="partners-array" id="partners-array" value="<? echo $content['partners_array']; ?>" />
+          </label>
 
           <label>
             <span>Event Date <b>*</b></span>
@@ -254,6 +259,22 @@ if( $action == "edit" ){
       });
 
     <? } ?>
+    
+      <? // get all partners
+      $partners = get_table('partners',0,0);
+      echo "partners = [";
+      while($partner = mysqli_fetch_assoc($partners)){
+        echo "'".$partner['slug']."', ";
+      }
+      echo "];\n"; ?>
+
+      // activate the partners picker
+      $('#partners-array').tagEditor({
+        autocomplete: {
+          delay: 0,
+          source: partners
+        }
+      });
 
     // activate the artists picker
     $('#artists-array').tagEditor({

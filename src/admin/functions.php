@@ -354,6 +354,18 @@ function output_sponsor($url,$pic,$name){
  
 }
 
+function output_partner($url,$pic,$name){
+
+  $pic = get_image_size('small',$pic);
+  echo '<a href="'.$url.'" target="_blank">';
+  echo '<div class="related-post partner">';
+  echo '<img src="'.$pic.'"/>';
+  echo '<span>'.$name.'</span>';
+  echo '</div>';
+  echo '</a>';
+  echo '<hr>';
+ 
+}
 
 function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
   
