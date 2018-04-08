@@ -80,9 +80,9 @@ function get_table($table, $offset, $limit, $order_by = ''){
     $limit_clause = '';
   }
 
-  if( $order_by !== '' && $table !== 'sponsors'){
+  if( $order_by !== '' && $table !== 'sponsors' && $table !== 'partners' ){
     $order_by_clause = "ORDER BY $order_by DESC";
-  }else if( $order_by !== '' && $table == 'sponsors' ){
+  }else if( $order_by !== '' && ( $table == 'sponsors' || $table == 'partners' ) ){
     $order_by_clause = "ORDER BY $order_by ASC";
   }else{
     $order_by_clause = "ORDER BY id DESC";
@@ -354,6 +354,18 @@ function output_sponsor($url,$pic,$name){
  
 }
 
+function output_partner($url,$pic,$name){
+
+  $pic = get_image_size('small',$pic);
+  echo '<a href="'.$url.'" target="_blank">';
+  echo '<div class="related-post partner">';
+  echo '<img src="'.$pic.'"/>';
+  echo '<span>'.$name.'</span>';
+  echo '</div>';
+  echo '</a>';
+  echo '<hr>';
+ 
+}
 
 function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
   
@@ -402,7 +414,7 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
     if( $layout_type == 'tiles' ){
 
       // get url
-      if( $table == 'sponsors' ){
+      if( $table == 'sponsors' || $table == 'partners' ){
         $url = $result['website'];
       }else{
         $url = $table . '/' . $slug;

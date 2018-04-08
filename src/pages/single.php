@@ -9,7 +9,7 @@
   $slug  = $_GET['slug'];
 
   // this should be an option in edit-single.php, rather than forced like this
-  if( $slug == 'sponsors' ){
+  if( $slug == 'sponsors' || $slug  == 'partners' ){
     $class = 'white-bg';
   }else{
     $class = '';
@@ -155,7 +155,7 @@
           }
         }
       }
-
+     
       // For artists page: show projects
       if( $table == 'artists' ){
         $projects = search_table('projects','artists_array',$slug);
@@ -171,6 +171,26 @@
 
             output_related_post($url,$pic,$name);
             
+          }
+        }
+      }
+      
+      // For event page: show partners (after artists and projects)
+      if( $table == 'events' ){
+
+        // partners
+        $partners = explode(',',$content['partners_array']);
+        if ( !empty($partners[0]) ){
+          echo "<h3>Partnered With:</h3>";
+          foreach( $partners as $partner){
+            $partner_slug = $partner;
+            $partner = get_row('partners','slug',$partner);
+
+            $pic  = $partner['pic'];
+            $name = $partner['name'];
+            $url  = $partner['website'];
+
+            output_partner($url,$pic,$name);
           }
         }
       }
