@@ -12,7 +12,7 @@ if( $_SESSION['logged_in'] !== true ){
 
     ?>
     
-    <body>
+    <body class='admin'>
       <div id="login">
         <form method="post">
           <label>

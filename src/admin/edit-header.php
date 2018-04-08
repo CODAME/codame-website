@@ -8,7 +8,7 @@ $content = get_row('headers','slug',$slug);
 $pic     = get_image_size('large',$content['pic']);
 
 ?>
-<body>
+<body class='admin'>
 
     <? include('partials/sidebar.php'); ?>
 

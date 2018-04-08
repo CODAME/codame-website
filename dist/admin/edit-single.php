@@ -18,7 +18,7 @@ if( $action == "edit" ){
 }
 
 ?>
-<body>
+<body class='admin'>
 
     <? include('partials/sidebar.php'); ?>
 
