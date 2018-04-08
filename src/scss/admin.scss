@@ -63,7 +63,7 @@ input[type=text][name=name]{
   padding: 5px 10px;
 }
 
-#sidebar>a{ /* log out link, floating alone */
+#sidebar>a[href="logout.php"]{ /* log out link, floating alone */
   float: left;
   width: 100%;
   padding: 10px;
@@ -74,10 +74,9 @@ input[type=text][name=name]{
   border-bottom: 1px solid #111;
   border-top: 1px solid #222;
   transition: background-color .2s;
-}
-
-#sidebar>a:hover{
-  background-color: rgba(64,64,64,.79);
+  &:hover{
+    background-color: rgba(64,64,64,.79);
+  }
 }
 
 .dashboard-links #links{
