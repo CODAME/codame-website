@@ -9,9 +9,6 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 rewriterule ^projects/modbod3d(.*)$ http://codame.com/projects/modbod$1 [r=301,nc]
 rewriterule ^artex(.*)$ http://codame.com/events/artificial-experiences$1 [r=301,nc]
 
-# remove trailing slash
-RewriteRule (.*)/$ /$1 [L,R=301]
-
 # Categories: 
 RewriteRule ^artists\/?$ ./category.php?table=artists
 RewriteRule ^events\/?$ ./category.php?table=events
@@ -19,10 +16,10 @@ RewriteRule ^projects\/?$ ./category.php?table=projects
 RewriteRule ^sponsors\/?$ ./category.php?table=sponsors
 
 # Singles:
-RewriteRule ^artists\/(.*)$ ./single.php?table=artists&slug=$1
-RewriteRule ^events\/(.*)$ ./single.php?table=events&slug=$1
-RewriteRule ^projects\/(.*)$ ./single.php?table=projects&slug=$1
-RewriteRule ^pages\/(.*)$ ./single.php?table=pages&slug=$1
+RewriteRule ^artists\/([^\/]*)\/?$ ./single.php?table=artists&slug=$1
+RewriteRule ^events\/([^\/]*)\/?$ ./single.php?table=events&slug=$1
+RewriteRule ^projects\/([^\/]*)\/?$ ./single.php?table=projects&slug=$1
+RewriteRule ^pages\/([^\/]*)\/?$ ./single.php?table=pages&slug=$1
 
 
 # Massive Legacy Redirect List:
