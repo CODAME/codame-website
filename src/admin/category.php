@@ -38,7 +38,7 @@ $noun = ucfirst(substr($table, 0, -1)); // noun for what is being edited. artist
       $row  = "<tr slug='$slug'>";
       $row .= "<td>$date</td>";
 
-      if( $table !== 'sponsors' && $table !== 'partners' ){
+      if( $table !== 'sponsors' ){
         $row .= "<td><input class='visibility' type='checkbox' $checked /></td>";
       }
       
