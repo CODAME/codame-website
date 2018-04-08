@@ -28,6 +28,12 @@
         <a href="<? echo $site_url ?>/admin/edit-header.php?slug=sponsors">Sponsors Header</a>    
     </div>
     <div>
+        <span>Partners</span>
+        <a href="<? echo $site_url ?>/admin/edit-single.php?action=add&table=partners">New Partner</a>
+        <a href="category.php?table=partners">All Partners</a>
+        <a href="<? echo $site_url ?>/admin/edit-header.php?slug=partners">Partners Header</a>    
+    </div>
+    <div>
         <span>Pages</span>
         <a href="<? echo $site_url ?>/admin/edit-single.php?action=add&table=pages">New Page</a>
         <a href="category.php?table=pages">All Pages</a>    

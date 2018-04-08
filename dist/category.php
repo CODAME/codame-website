@@ -11,7 +11,7 @@
     $order_by = 'edited';
   }else if( $table == 'events' ){
     $order_by = 'date';
-  }else if( $table == 'sponsors' ){
+  }else if( $table == 'sponsors' || $table == 'partners' ){
     $order_by = 'name';
   }else{
     // an invalid table was given. Redirect to home.
