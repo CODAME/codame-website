@@ -1,6 +1,6 @@
 <? include('partials/head.php'); ?>
 
-<body id="dashboard">
+<body id="dashboard" class='admin'>
 
     <? include('partials/sidebar.php'); ?>
 

@@ -17,10 +17,10 @@ RewriteRule ^sponsors\/?$ ./category.php?table=sponsors
 RewriteRule ^partners\/?$ ./category.php?table=partners
 
 # Singles:
-RewriteRule ^artists\/(.*)$ ./single.php?table=artists&slug=$1
-RewriteRule ^events\/(.*)$ ./single.php?table=events&slug=$1
-RewriteRule ^projects\/(.*)$ ./single.php?table=projects&slug=$1
-RewriteRule ^pages\/(.*)$ ./single.php?table=pages&slug=$1
+RewriteRule ^artists\/([^\/]*)\/?$ ./single.php?table=artists&slug=$1
+RewriteRule ^events\/([^\/]*)\/?$ ./single.php?table=events&slug=$1
+RewriteRule ^projects\/([^\/]*)\/?$ ./single.php?table=projects&slug=$1
+RewriteRule ^pages\/([^\/]*)\/?$ ./single.php?table=pages&slug=$1
 
 
 # Massive Legacy Redirect List:

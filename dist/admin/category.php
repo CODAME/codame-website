@@ -5,7 +5,7 @@ $noun = ucfirst(substr($table, 0, -1)); // noun for what is being edited. artist
 
 ?>
 
-<body>
+<body class='admin'>
 
   <? include('partials/sidebar.php'); ?>
 
