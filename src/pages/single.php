@@ -76,6 +76,7 @@
         // if there are results, output them
         if( mysqli_num_rows($events) ){
 
+          echo "<div class='related'>";
           echo "<h3>Seen At:</h3>";  
 
           while($event = mysqli_fetch_assoc($events)){
@@ -87,6 +88,8 @@
             output_related_post($url,$pic,$name);
             
           }
+
+          echo "</div>";
         }
         
       }
@@ -97,6 +100,8 @@
         // sponsors
         $sponsors = explode(',',$content['sponsors_array']);
         if ( !empty($sponsors[0]) ){
+          
+          echo "<div class='related'>";
           echo "<h3>Sponsors:</h3>";
           foreach( $sponsors as $sponsor){
             $sponsor_slug = $sponsor;
@@ -108,11 +113,14 @@
 
             output_sponsor($url,$pic,$name);
           }
+          echo "</div>";
         }
 
         // projects
         $projects = explode(',',$content['projects_array']);
         if ( !empty($projects[0]) ){
+
+          echo "<div class='related'>";
           echo "<h3>Projects:</h3>";
           foreach( $projects as $project){
             $project_slug = $project;
@@ -124,6 +132,7 @@
 
             output_related_post($url,$pic,$name);
           }
+          echo "</div>";
         }
 
       }
@@ -142,6 +151,7 @@
           shuffle($artists); // mix it up
           array_unshift($artists,$first_artist); // add the first back on
           
+          echo "<div class='related'>";
           echo "<h3>Artists:</h3>";
           foreach( $artists as $artist){
             $artist_slug = $artist;
@@ -153,6 +163,7 @@
 
             output_related_post($url,$pic,$name);
           }
+          echo "</div>";
         }
       }
      
@@ -161,7 +172,8 @@
         $projects = search_table('projects','artists_array',$slug);
         if( mysqli_num_rows( $projects ) ){
 
-          echo "<h3>Works On:</h3>";
+          echo "<div class='related'>";
+          echo "<h3>Projects:</h3>";
 
           while($project = mysqli_fetch_assoc($projects)){
 
@@ -172,6 +184,7 @@
             output_related_post($url,$pic,$name);
             
           }
+          echo "</div>";
         }
       }
       
@@ -181,6 +194,7 @@
         // partners
         $partners = explode(',',$content['partners_array']);
         if ( !empty($partners[0]) ){
+          echo "<div class='related'>";
           echo "<h3>Partners:</h3>";
           foreach( $partners as $partner){
             $partner_slug = $partner;
@@ -192,6 +206,7 @@
 
             output_partner($url,$pic,$name);
           }
+          echo "</div>";
         }
       }
 

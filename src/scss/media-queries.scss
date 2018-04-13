@@ -1,4 +1,7 @@
 
+// Phase out this file
+// all media queries should be nested with their normal rules
+
 @media (max-width: 1300px) {
   #content{
     width: 70%;
@@ -25,20 +28,6 @@
     position: relative;
     left: 20px;
     margin-bottom: 80px;
-  }
-  .related-post{
-    width: 30%;
-    height:100px;
-    max-width: none;
-    display: inline-block;
-    margin:0 1% 48px 0;
-
-    span{
-      left: 0;
-      bottom: 0px;
-      top:auto;
-      transform: translateY(120%);
-    }
   }
   .info-link{
     width: 50%;
