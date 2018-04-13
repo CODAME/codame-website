@@ -426,6 +426,12 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
       echo "<a href='$url' style='background-image:url($pic)' class='$tile_class' >";
       
       if( $table == 'events'){
+        
+        // monkey fix for festival 2018 date
+        if( $name == "ART+TECH Festival [2018]" ){
+          $date = "June 4-7";
+        }
+
         echo "<div class='date'>$date</div>";
       }
 
@@ -440,7 +446,7 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
       echo "<a href='$table/$slug' class='content-block'>";
       
       // output the image.
-      // if it is within the first few, don't let it be lazy
+      // if it is within the first few, don't let it be lazy loaded
       if( $result_number < 3 ){
         echo "<img src='$pic' />";  
       }else{
@@ -448,6 +454,12 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
       }
       
       if( $table == 'events'){
+
+        // monkey fix for festival 2018 date
+        if( $name == "ART+TECH Festival [2018]" ){
+          $date = "June 4-7";
+        }
+
         echo "  <span>$name <div class='date'>$date</div></span>";
       }else{
         echo "  <span>$name</span>";
