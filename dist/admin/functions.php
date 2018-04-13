@@ -334,7 +334,8 @@ function output_related_post($url,$pic,$name){
 
   $pic = get_image_size('small',$pic);
   echo '<a href="'.$url.'">';
-  echo '<div class="related-post" style="background-image:url('.$pic.')">';
+  echo '<div class="related-post">';
+  echo '<img src="'.$pic.'" />';
   echo '<span>'.$name.'</span>';
   echo '</div>';
   echo '</a>';

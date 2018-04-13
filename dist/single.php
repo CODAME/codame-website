@@ -97,7 +97,7 @@
         // sponsors
         $sponsors = explode(',',$content['sponsors_array']);
         if ( !empty($sponsors[0]) ){
-          echo "<h3>Sponsored By:</h3>";
+          echo "<h3>Sponsors:</h3>";
           foreach( $sponsors as $sponsor){
             $sponsor_slug = $sponsor;
             $sponsor = get_row('sponsors','slug',$sponsor);
@@ -181,7 +181,7 @@
         // partners
         $partners = explode(',',$content['partners_array']);
         if ( !empty($partners[0]) ){
-          echo "<h3>Partnered With:</h3>";
+          echo "<h3>Partners:</h3>";
           foreach( $partners as $partner){
             $partner_slug = $partner;
             $partner = get_row('partners','slug',$partner);
