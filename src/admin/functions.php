@@ -208,7 +208,10 @@ function upload_image($file_array, $slug, $small_width = 350){
   // echo "Upload: " . $file_array["name"] . "<br>";
   // echo "Type: " . $file_array["type"] . "<br>";
   // echo "Size: " . ($file_array["size"] / 1024) . " kB<br>";
-  // echo "Stored in: " . $file_array["tmp_name"];
+  // echo "Stored in: " . $file_array["tmp_name"] . "<br>";
+  // echo "Error is: " . $file_array["error"];
+
+  // die;
 
   // check if image was uploaded
   if( empty( $file_array ) ){
@@ -236,7 +239,13 @@ function upload_image($file_array, $slug, $small_width = 350){
     return false;
   }
 
-  $ext = strtolower('.' . end(explode(".", $image_name)));
+  $filename_parts = explode(".", $image_name);
+
+  if( !$slug ){
+  	$slug = to_slug($filename_parts[0]);
+  }
+
+  $ext = strtolower('.' . end($filename_parts));
 
   //check if extension is allowed or not
   $whitelist = array(".jpg",".jpeg",".gif",".png"); 

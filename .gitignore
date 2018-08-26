@@ -10,8 +10,9 @@ config/secrets.php
 ehthumbs.db
 Thumbs.db
 
-# Specific config file
+# Specific config files
 config.php
+config
 
 # Logs
 logs
