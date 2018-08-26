@@ -242,7 +242,7 @@ function upload_image($file_array, $slug, $small_width = 350){
   $filename_parts = explode(".", $image_name);
 
   if( !$slug ){
-  	$slug = to_slug($filename_parts[0]);
+  	$slug = to_slug($filename_parts[0]).'-'.time();
   }
 
   $ext = strtolower('.' . end($filename_parts));
