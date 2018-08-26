@@ -52,7 +52,7 @@ $pic     = get_image_size('large',$content['pic']);
 
           <label>
             <span>Banner Link URL <b>*</b></span>
-            <input type="text" name="banner-link-url" value="<? echo $content['banner-link-url'] ?>" />
+            <input type="text" name="banner_link_url" value="<? echo $content['banner_link_url'] ?>" />
           </label>
 
         </fieldset>

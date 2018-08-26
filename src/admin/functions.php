@@ -29,6 +29,8 @@ function delete_row($table,$where_key,$where_value){
 
 function update_field($table,$where_key,$where_value,$set_key,$set_value){
 
+	// note: never use dashes in the mysql field key, it wont work
+
   $con = db_connect();
 
   $table       = mysqli_real_escape_string($con,$table);

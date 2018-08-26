@@ -15,7 +15,7 @@
       <? $header = get_row('headers','slug','homepage'); ?>
 
       <? if( $header['pic'] !== '' ){ ?>
-        <a href="<? echo $header['banner-link-url'] ?>">
+        <a href="<? echo $header['banner_link_url'] ?>">
           <img src="<? echo $header['pic'] ?>">
         </a>
       <? } ?>

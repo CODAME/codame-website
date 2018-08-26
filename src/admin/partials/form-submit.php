@@ -21,10 +21,6 @@ if (!empty($_POST) && !$_POST['password']){
   // upload picture
   $pic = upload_image( $_FILES['pic'], $slug );
 
-  // echo $pic;
-
-  // die;
-
   if( !$pic ){
     $pic = $original_pic;
   } 
@@ -205,7 +201,7 @@ if (!empty($_POST) && !$_POST['password']){
     if( $table == 'headers' ){
       $row_array = array(
         'pic'             => $pic,
-        'banner-link-url' => $_POST['banner-link-url'],
+        'banner_link_url' => $_POST['banner_link_url'],
         'description'     => $_POST['description']
       );
     }
