@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/CODAME/codame-website#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-livereload": "^3.8.1",
