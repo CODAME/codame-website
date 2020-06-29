@@ -148,7 +148,8 @@ if (!empty($_POST) && !$_POST['password']){
         'email'       => $_POST['email'],
         'slug'        => $slug,
         'old_url'     => $_POST['old-url'],
-        'edited'      => $now
+        'edited'      => $now,
+        'shop_url'    => $_POST['shop_url'],
       );
     }
 
