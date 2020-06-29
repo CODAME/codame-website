@@ -231,7 +231,7 @@
       if( !empty($content['shop_url']) ){
 
         echo '<a href="'.$content["shop_url"].'" class="info-link">';
-        include('assets/network.svg');
+        include('assets/shop.svg');
         echo 'Online Store';
         echo '</a><hr>';
 
