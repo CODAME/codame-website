@@ -16,6 +16,18 @@
 2. Replace `config/secrets-example.php` with the real secrets file, provided by an existing Codame developer.
 3. In secrets.php replace the local URL with the actual URL of your local site
 
+--
+
+Alternatively the site can be run directly with PHP builtin server:
+1. Install php on your system (ex: `brew install php` on mac)
+2. cd dist
+3. `php -S localhost:8000 -n` (-n tells php to not require a php.ini file to work).
+
+### Notes
+
+The file `npm-shrinkwrap.json` is used to lock the versions of npm dependencies.
+Without this gulp 3 fails to run on MacOS and maybe other systems.
+
 ### Deployment
 
 - All pushes to `master` automatically get deployed to http://dev.codame.com.
