@@ -24,9 +24,10 @@ Alternatively the site can be run directly with PHP builtin server:
 3. `php -S localhost:8000 -n` (-n tells php to not require a php.ini file to work).
 
 ### Notes
+Recommend using node version under 12 to avoid gulp version conflict.
 
-The file `npm-shrinkwrap.json` is used to lock the versions of npm dependencies.
-Without this gulp 3 fails to run on MacOS and maybe other systems.
+If you do want to use node version 12 and run into issues, add a `npm-shrinkwrap.json` file to lock the versions of npm dependencies.
+See [here](https://timonweb.com/posts/how-to-fix-referenceerror-primordials-is-not-defined-error/) for more details
 
 ### Deployment
 
