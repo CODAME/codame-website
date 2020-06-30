@@ -14,6 +14,7 @@
         <a href="<? echo $site_url ?>/admin/edit-single.php?action=add&table=events">New Event</a>
         <a href="category.php?table=events">All Events</a>
         <a href="<? echo $site_url ?>/admin/edit-header.php?slug=events">Events Header</a>
+        <a href="<? echo $site_url ?>/admin/edit-header.php?slug=workshops">Workshops Header</a>
     </div>
     <div>
         <span>Projects</span>

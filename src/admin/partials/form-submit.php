@@ -220,6 +220,7 @@ if (!empty($_POST) && !$_POST['password']){
     generate_sidebar_pages($site_url);
   }
 
+  // Redirects. Sometimes useful to comment out to see result of POSTs before redirect.
   if( $error ){
     echo $error;
   }else if( $table == 'sponsors' ){
