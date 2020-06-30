@@ -128,7 +128,10 @@ if( $action == "edit" ){
         <? if( $table == 'events' ){ ?>
           <label>
             <span>Event Type</span>
-            <input type="text" name="event-type" value="<? echo $content['event_type']; ?>" />
+            <select name="event-type">
+              <option value="event" <?= $content['event_type'] == "event" ? "selected='selected'" : "" ?>>Event</option>
+              <option value="workshop"<?= $content['event_type'] == "workshop" ? "selected='selected'" : "" ?>>Workshop</option>
+            </select>
           </label>
         <? } ?>
 
