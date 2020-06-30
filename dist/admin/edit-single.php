@@ -125,6 +125,12 @@ if( $action == "edit" ){
         <? } ?>
 
         <!-- Fields for events and projects only. (Artists list) -->
+        <? if( $table == 'events' ){ ?>
+          <label>
+            <span>Event Type</span>
+            <input type="text" name="event-type" value="<? echo $content['event_type']; ?>" />
+          </label>
+        <? } ?>
 
         <? if( $table == 'events' || $table == 'projects' ){ ?>
 
