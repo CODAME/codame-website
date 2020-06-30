@@ -7,6 +7,19 @@
 
   $table = $_GET['table'];
 
+  $where_clause = '';
+  $page_title = $table;
+
+  if ($table == 'events') {
+    if ($_GET['event_type'] == "workshop") {
+      $page_title = "Workshops";
+      $where_clause = " WHERE event_type = 'workshop' ";
+    } else {
+      $page_title = "Events";
+      $where_clause = " WHERE event_type = 'event' ";
+    }
+  }
+
   if( $table == 'artists' || $table == 'projects'){
     $order_by = 'edited';
   }else if( $table == 'events' ){
@@ -35,7 +48,7 @@
       <? } ?>
 
       <div class="bar-link">
-        <h2><? echo $table; ?></h2>
+        <h2><? echo $page_title; ?></h2>
         <?
         if( $header['description'] !== '' ){
           echo $header['description'];
@@ -44,7 +57,7 @@
       </div>
 
       <div class="tiles">
-        <? output_results($table,0,0,'tiles',$order_by); ?>
+        <? output_results($table,0,0,'tiles',$order_by, $where_clause); ?>
       </div>
 
   </div>
