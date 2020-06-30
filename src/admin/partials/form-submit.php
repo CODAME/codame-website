@@ -220,7 +220,6 @@ if (!empty($_POST) && !$_POST['password']){
     generate_sidebar_pages($site_url);
   }
 
-  /*
   if( $error ){
     echo $error;
   }else if( $table == 'sponsors' ){
@@ -232,8 +231,7 @@ if (!empty($_POST) && !$_POST['password']){
   }else{
     // die;
     echo "<script>location.href='$site_url/$table/$slug'</script>";  
-  }  
-  */
+  }
 }
 
 ?>
