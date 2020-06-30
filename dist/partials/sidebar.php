@@ -12,7 +12,6 @@
 
   <div id="menu-content">
     <nav id="links" class='active-<? echo $table ?>'>
-      <a href='http://codame.com/pages/shop' id="link-shop">Shop</a>
       <a href="<? echo $site_url; ?>/events" id='link-events'>Events</a>
       <a href="<? echo $site_url; ?>/projects" id='link-projects'>Projects</a>
       <a href="<? echo $site_url; ?>/artists" id='link-artists'>Artists</a>
