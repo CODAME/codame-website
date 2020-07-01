@@ -21,7 +21,7 @@
       $where_clause = " WHERE event_type = 'event' ";
       $header = get_row('headers','slug','events');
     }
-  } else if (
+  } else if (  
     $table == "homepage" ||
     $table == "sponsors" ||
     $table == "projects" ||
