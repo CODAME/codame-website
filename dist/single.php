@@ -37,7 +37,7 @@
         <? if( !empty( $content['pic'] ) ){ ?>
           <img src="<? echo $content['pic']; ?>" alt="<? echo $content['name']; ?>" />
         <? } ?>
-        
+
         <div class="text-content">
           <? echo $content['description']; ?>
         </div>
@@ -52,47 +52,9 @@
 
         // echo '<img src="../assets/commission-this-artist.png" />';
 
-      }      
-
-      // RELATED POSTS
-
-      // For artist page OR project page: show events
-
-      if( $table == 'artists' || $table == 'projects'){
-
-        if( $table == 'artists' ){
-          // search column is artists in the event row
-          $search_col = 'artists_array';
-        }
-
-        if( $table == 'projects' ){
-          // search column is projects in the event row
-          $search_col = 'projects_array';
-        }
-
-        // run the search
-        $events = search_table( 'events', $search_col, $slug, 'date');
-
-        // if there are results, output them
-        if( mysqli_num_rows($events) ){
-
-          echo "<div class='related'>";
-          echo "<h3>Seen At:</h3>";  
-
-          while($event = mysqli_fetch_assoc($events)){
-
-            $pic    = $event['pic'];
-            $name   = $event['name'];
-            $url    = $site_url.'/events/'.$event['slug'];
-
-            output_related_post($url,$pic,$name);
-            
-          }
-
-          echo "</div>";
-        }
-        
       }
+
+
 
       // For event page: show sponsors and projects
       if( $table == 'events' ){
@@ -100,7 +62,7 @@
         // sponsors
         $sponsors = explode(',',$content['sponsors_array']);
         if ( !empty($sponsors[0]) ){
-          
+
           echo "<div class='related'>";
           echo "<h3>Sponsors:</h3>";
           foreach( $sponsors as $sponsor){
@@ -150,13 +112,13 @@
           $first_artist = array_shift($artists);
           shuffle($artists); // mix it up
           array_unshift($artists,$first_artist); // add the first back on
-          
+
           echo "<div class='related'>";
           echo "<h3>Artists:</h3>";
           foreach( $artists as $artist){
             $artist_slug = $artist;
             $artist = get_row('artists','slug',$artist);
-            
+
             $pic  = $artist['pic'];
             $name = $artist['name'];
             $url  = $site_url.'/artists/'.$artist_slug;
@@ -166,7 +128,7 @@
           echo "</div>";
         }
       }
-     
+
       // For artists page: show projects
       if( $table == 'artists' ){
         $projects = search_table('projects','artists_array',$slug);
@@ -182,12 +144,12 @@
             $url    = $site_url.'/projects/'.$project['slug'];
 
             output_related_post($url,$pic,$name);
-            
+
           }
           echo "</div>";
         }
       }
-      
+
       // For event page: show partners (after artists and projects)
       if( $table == 'events' ){
 
@@ -210,6 +172,15 @@
         }
       }
 
+      if( !empty($content['shop_url']) ){
+
+        echo '<a href="'.$content["shop_url"].'" class="info-link">';
+        include('assets/shop.svg');
+        echo 'Online shop';
+        echo '</a><hr>';
+
+      }
+
       if( !empty($content['website']) ){
 
         echo '<a href="'.$content["website"].'" class="info-link">';
@@ -226,16 +197,47 @@
         echo $content['name'] . ' on Twitter';
         echo '</a><hr>';
 
-      }      
+      }
 
-      if( !empty($content['shop_url']) ){
+      // RELATED POSTS
 
-        echo '<a href="'.$content["shop_url"].'" class="info-link">';
-        include('assets/shop.svg');
-        echo 'Online Store';
-        echo '</a><hr>';
+      // For artist page OR project page: show events
 
-      }  
+      if( $table == 'artists' || $table == 'projects'){
+
+        if( $table == 'artists' ){
+          // search column is artists in the event row
+          $search_col = 'artists_array';
+        }
+
+        if( $table == 'projects' ){
+          // search column is projects in the event row
+          $search_col = 'projects_array';
+        }
+
+        // run the search
+        $events = search_table( 'events', $search_col, $slug, 'date');
+
+        // if there are results, output them
+        if( mysqli_num_rows($events) ){
+
+          echo "<div class='related'>";
+          echo "<h3>Seen At:</h3>";
+
+          while($event = mysqli_fetch_assoc($events)){
+
+            $pic    = $event['pic'];
+            $name   = $event['name'];
+            $url    = $site_url.'/events/'.$event['slug'];
+
+            output_related_post($url,$pic,$name);
+
+          }
+
+          echo "</div>";
+        }
+
+      }
 
       ?>
 
