@@ -7,6 +7,29 @@
 
   $table = $_GET['table'];
 
+  $where_clause = '';
+  $page_title = $table;
+  $header = null;
+
+  if ($table == 'events') {
+    if ($_GET['event_type'] == "workshop") {
+      $page_title = "Workshops";
+      $where_clause = " WHERE event_type = 'workshop' ";
+      $header = get_row('headers','slug','workshops');
+    } else {
+      $page_title = "Events";
+      $where_clause = " WHERE event_type = 'event' ";
+      $header = get_row('headers','slug','events');
+    }
+  } else if (  
+    $table == "homepage" ||
+    $table == "sponsors" ||
+    $table == "projects" ||
+    $table == "artists"
+  ) {
+    $header = get_row('headers','slug',$table);
+  }
+
   if( $table == 'artists' || $table == 'projects'){
     $order_by = 'edited';
   }else if( $table == 'events' ){
@@ -26,8 +49,7 @@
   <? include('partials/header.php') ?>
   <? include('partials/sidebar.php') ?>
   <div id="content">
-
-      <? $header = get_row('headers','slug',$table); ?>
+    <? if ($header) { ?>
       <? if( $header['pic'] !== '' ){ ?>
         <a href="<? echo $header['banner_link_url'] ?>">
           <img src="<? echo $header['pic'] ?>">
@@ -35,16 +57,17 @@
       <? } ?>
 
       <div class="bar-link">
-        <h2><? echo $table; ?></h2>
+        <h2><? echo $page_title; ?></h2>
         <?
         if( $header['description'] !== '' ){
           echo $header['description'];
         }
         ?>
       </div>
+    <? } ?>
 
       <div class="tiles">
-        <? output_results($table,0,0,'tiles',$order_by); ?>
+        <? output_results($table,0,0,'tiles',$order_by, $where_clause); ?>
       </div>
 
   </div>

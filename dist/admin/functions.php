@@ -68,7 +68,7 @@ function insert_row($table,$row_array){
 
 }
 
-function get_table($table, $offset, $limit, $order_by = ''){
+function get_table($table, $offset, $limit, $order_by = '', $where_clause = ''){
 
   $con      = db_connect();
   $table    = mysqli_real_escape_string($con,$table);
@@ -90,12 +90,11 @@ function get_table($table, $offset, $limit, $order_by = ''){
     $order_by_clause = "ORDER BY id DESC";
   }
 
-  $query = "SELECT * FROM $table $order_by_clause $limit_clause";
+  $query = "SELECT * FROM $table $where_clause $order_by_clause $limit_clause";
 
   $result = mysqli_query($con, $query);
   
   return $result;
-
 }
 
 function get_row($table,$where_key,$where_value){
@@ -379,9 +378,9 @@ function output_partner($url,$pic,$name){
  
 }
 
-function output_results( $table, $offset, $limit, $layout_type, $order_by = ''){
+function output_results( $table, $offset, $limit, $layout_type, $order_by = '', $where_clause = ''){
   
-  $results = get_table($table,$offset,$limit,$order_by);
+  $results = get_table($table,$offset,$limit,$order_by,$where_clause);
   $results_array = array();
   
   while($result = mysqli_fetch_assoc($results)){

@@ -125,6 +125,15 @@ if( $action == "edit" ){
         <? } ?>
 
         <!-- Fields for events and projects only. (Artists list) -->
+        <? if( $table == 'events' ){ ?>
+          <label>
+            <span>Event Type</span>
+            <select name="event-type">
+              <option value="event" <?= $content['event_type'] == "event" ? "selected='selected'" : "" ?>>Event</option>
+              <option value="workshop"<?= $content['event_type'] == "workshop" ? "selected='selected'" : "" ?>>Workshop</option>
+            </select>
+          </label>
+        <? } ?>
 
         <? if( $table == 'events' || $table == 'projects' ){ ?>
 

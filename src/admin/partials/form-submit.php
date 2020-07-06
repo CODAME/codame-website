@@ -43,7 +43,8 @@ if (!empty($_POST) && !$_POST['password']){
           'description'    => $_POST['description'],
           'artists_array'  => $_POST['artists-array'],
           'projects_array' => $_POST['projects-array'],
-          'old_url'        => $_POST['old-url']
+          'old_url'        => $_POST['old-url'],
+          'event_type'     => $_POST['event-type']
         );
       }
 
@@ -133,7 +134,8 @@ if (!empty($_POST) && !$_POST['password']){
         'projects_array' => $_POST['projects-array'],
         'sponsors_array' => $_POST['sponsors-array'],
         'partners_array' => $_POST['partners-array'],
-        'old_url'        => $_POST['old-url']
+        'old_url'        => $_POST['old-url'],
+        'event_type'     => $_POST['event-type']
       );
     }
 
@@ -218,6 +220,7 @@ if (!empty($_POST) && !$_POST['password']){
     generate_sidebar_pages($site_url);
   }
 
+  // Redirects. Sometimes useful to comment out to see result of POSTs before redirect.
   if( $error ){
     echo $error;
   }else if( $table == 'sponsors' ){
@@ -229,8 +232,7 @@ if (!empty($_POST) && !$_POST['password']){
   }else{
     // die;
     echo "<script>location.href='$site_url/$table/$slug'</script>";  
-  }  
-
+  }
 }
 
 ?>
