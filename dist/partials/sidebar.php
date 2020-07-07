@@ -11,7 +11,21 @@
   </div>
 
   <div id="menu-content">
-    <nav id="links" class='active-<? echo $table ?>'>
+    <nav id="links" class='active-<?
+     echo (
+      $table == "events" && $_GET['event_type'] == "event"
+      ? 
+      'events' 
+      :
+      (
+        $table == "events" && $_GET['event_type'] == "workshop" 
+        ?
+        'workshops' 
+        :
+        $table
+      )
+     )
+      ?>'>
       <a href="<? echo $site_url; ?>/workshops" id='link-workshops'>Workshops</a>
       <a href="<? echo $site_url; ?>/events" id='link-events'>Events</a>
       <a href="<? echo $site_url; ?>/projects" id='link-projects'>Projects</a>
