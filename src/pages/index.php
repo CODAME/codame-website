@@ -30,7 +30,7 @@
       
     </div>
 
-    <!-- EVENTS -->
+    <!-- WORKSHOPS -->
 
     <section class="column" id="events">
       <a href="<? echo $site_url; ?>/events" class="bar-link">
