@@ -30,17 +30,17 @@
       
     </div>
 
-    <!-- WORKSHOPS -->
+    <!-- Workshops -->
 
     <section class="column" id="events">
-      <a href="<? echo $site_url; ?>/events" class="bar-link">
+      <a href="<? echo $site_url; ?>/workshops" class="bar-link">
         <h2>
-          Events
+          Workshops
         </h2>
       </a>
 
       <div class='inner-column'>
-        <? output_results('events',0,0,'blocks','date'); ?>
+        <? output_results('events',0,0,'blocks','date', " WHERE event_type = 'workshop' "); ?>
       </div>
 
     </section>
