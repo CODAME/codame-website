@@ -44,40 +44,32 @@
 
     <div id='social-sidebar'>
 
-      <a href="https://twitter.com/codame">
+      <a href="https://codame.substack.com/" target="_blank">
+        <? include('assets/rss.svg') ?>
+      </a>
+
+      <a href="https://twitter.com/codame" target="_blank">
         <? include('assets/twitter.svg') ?>
       </a>
 
-      <a href="https://www.facebook.com/CODAME.ART.TECH">
+      <a href="https://www.facebook.com/CODAME.ART.TECH" target="_blank">
         <? include('assets/facebook.svg') ?>
       </a>
 
-      <a href="https://medium.com/codame-art-tech">
+      <a href="https://medium.com/codame-art-tech" target="_blank">
         <? include('assets/medium.svg') ?>
       </a>
 
-      <a href="https://instagram.com/codame/">
+      <a href="https://instagram.com/codame/" target="_blank">
         <? include('assets/instagram.svg') ?>
       </a>
 
-      <a href="http://codame.tumblr.com/">
-        <? include('assets/tumblr.svg') ?>
-      </a>
-
-      <a href="https://github.com/codame">
+      <a href="https://github.com/codame" target="_blank">
         <? include('assets/github.svg') ?>
       </a>
 
-      <a href="https://www.flickr.com/photos/codame">
-        <? include('assets/flickr.svg') ?>
-      </a>
-
-      <a href="https://www.linkedin.com/company/codame">
+      <a href="https://www.linkedin.com/company/codame" target="_blank">
         <? include('assets/linkedin.svg') ?>
-      </a>
-
-      <a href="https://vimeo.com/codame">
-        <? include('assets/vimeo.svg') ?>
       </a>
 
     </div>
