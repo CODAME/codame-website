@@ -282,7 +282,7 @@ function upload_image($file_array, $slug, $small_width = 350){
 
   if( move_uploaded_file( $file_array['tmp_name'], "../uploaded_images/".$image_name )){
     
-    $pic = "http://codame.com/uploaded_images/$image_name";
+    $pic = "https://codame.com/uploaded_images/$image_name";
     
     $small_pic = str_replace($ext, '-small'.$ext, $image_name);
     $small_pic_path = '../uploaded_images/' . $small_pic;
