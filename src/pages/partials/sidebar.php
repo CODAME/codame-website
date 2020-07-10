@@ -38,7 +38,7 @@
       // this function is called when a new page is saved, or any page is edited.
       ?>
 
-      <!-- flag start --><a href='https://codame.com/pages/join-us'>Join Us</a><a href='https://codame.com/pages/about'>About</a><a href='https://codame.com/pages/media-kit'>Media Kit</a><a href='https://codame.com/pages/support-art-tech'>Support ART+TECH</a><!-- flag end -->
+      <!-- flag start --><a href='http://codame.com/pages/join-us'>Join Us</a><a href='http://codame.com/pages/about'>About</a><a href='http://codame.com/pages/media-kit'>Media Kit</a><a href='http://codame.com/pages/support-art-tech'>Support ART+TECH</a><!-- flag end -->
 
     </nav>
 
