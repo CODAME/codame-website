@@ -1,8 +1,8 @@
 <head>
   <meta name="viewport" content="width=device-width">
-  <link href='http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="<? echo $site_url ?>/style.css" />
-  <link rel="shortcut icon" href="http://codame.com/favicon.ico" />
+  <link rel="shortcut icon" href="https://codame.com/favicon.ico" />
   <?
 
     $title = '';

@@ -110,7 +110,7 @@ if( $action == "edit" ){
 
           <label>
             <span><? echo $noun ?> Twitter URL (appears on sidebar)</span>
-            <input type="text" name="twitter" placeholder="http://twitter.com/<? echo $noun ?>" value="<? echo $content['twitter'] ?>"/>
+            <input type="text" name="twitter" placeholder="https://twitter.com/<? echo $noun ?>" value="<? echo $content['twitter'] ?>"/>
           </label>
 
         <? } ?>
@@ -119,7 +119,7 @@ if( $action == "edit" ){
 
           <label>
             <span><? echo $noun ?> Shop URL (appears on sidebar)</span>
-            <input type="text" name="shop_url" placeholder="http://example.com/<? echo $noun ?>" value="<? echo $content['shop_url'] ?>"/>
+            <input type="text" name="shop_url" placeholder="https://example.com/<? echo $noun ?>" value="<? echo $content['shop_url'] ?>"/>
           </label>
 
         <? } ?>
