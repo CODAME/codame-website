@@ -4,7 +4,16 @@
 <html>
 <? include('partials/head.php') ?>
 <body>
-
+  <? if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') { ?>
+    // SSL connection 
+   <div style="display:none">
+    <? echo "hello" ?>
+   </div>
+  <? } else { ?>
+  <div style="display:none">
+    <? echo "baz" ?>
+   </div>
+  <? } ?>
   <? include('partials/header.php') ?>
   <? include('partials/sidebar.php') ?>
   
