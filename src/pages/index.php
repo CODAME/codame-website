@@ -5,14 +5,14 @@
 <? include('partials/head.php') ?>
 <body>
   <? if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') { ?>
-    // SSL connection 
-   <div style="display:none">
-    <? echo "hello" ?>
-   </div>
+    We are still working on HTTPS.
+    Meanwhile, please visit <a href="http://codame.com">here</a>.
+    Thanks for your support!
+  <? exit() ?>
   <? } else { ?>
   <div style="display:none">
     <? echo "baz" ?>
-   </div>
+  </div>
   <? } ?>
   <? include('partials/header.php') ?>
   <? include('partials/sidebar.php') ?>
