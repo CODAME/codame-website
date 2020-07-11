@@ -1,7 +1,3 @@
-# Force HTTPS
-RewriteCond %{HTTPS} !=on
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
-
 # Allow Rewrites:
 Options +FollowSymLinks  
 RewriteEngine On  
