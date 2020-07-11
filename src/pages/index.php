@@ -4,16 +4,6 @@
 <html>
 <? include('partials/head.php') ?>
 <body>
-  <? if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') { ?>
-    We are still working on HTTPS.
-    Meanwhile, please visit <a href="http://codame.com">here</a>.
-    Thanks for your support!
-  <? exit() ?>
-  <? } else { ?>
-  <div style="display:none">
-    <? echo "baz" ?>
-  </div>
-  <? } ?>
   <? include('partials/header.php') ?>
   <? include('partials/sidebar.php') ?>
   
