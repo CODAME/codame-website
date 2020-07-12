@@ -38,7 +38,7 @@
     $order_by = 'name';
   }else{
     // an invalid table was given. Redirect to home.
-    header('Location:http://codame.com');
+    header('Location://codame.com');
   }
 
 ?>

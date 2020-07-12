@@ -21,5 +21,5 @@ session_destroy();
 
 ?>
 <script>
-  location.href='http://codame.com';
+  location.href='//' + location.host;
 </script>
