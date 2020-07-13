@@ -14,7 +14,7 @@ if (!empty($_POST) && !$_POST['password']){
 
   $table        = $_POST['table'];
   $name         = $_POST['name'];
-  $slug         = to_slug($name);
+  $slug         = $_POST['slug'] ? $_POST['slug'] : to_slug($name);
   $now          = time();
   $original_pic = $_POST['pic'];
 
