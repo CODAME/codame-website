@@ -52,7 +52,62 @@
 
         // echo '<img src="../assets/commission-this-artist.png" />';
 
-      }      
+      }
+
+      // For event page OR project page: show artists
+      if( $table == 'events' || $table == 'projects' ){
+
+        $artists = explode(',',$content['artists_array']);
+
+        if ( !empty($artists[0]) ){
+
+          // keep first artist listed in place, shuffle the rest of the artists
+
+          $first_artist = array_shift($artists);
+          shuffle($artists); // mix it up
+          array_unshift($artists,$first_artist); // add the first back on
+          
+          echo "<div class='related'>";
+          echo "<h3>Artists:</h3>";
+          foreach( $artists as $artist){
+            $artist_slug = $artist;
+            $artist = get_row('artists','slug',$artist);
+            
+            $pic  = $artist['pic'];
+            $name = $artist['name'];
+            $url  = $site_url.'/artists/'.$artist_slug;
+
+            output_related_post($url,$pic,$name);
+          }
+          echo "</div>";
+        }
+      }
+      if( !empty($content['shop_url']) ){
+
+        echo '<a href="'.$content["shop_url"].'" class="info-link">';
+        include('assets/shop.svg');
+        echo 'Online Shop';
+        echo '</a><hr>';
+
+      }
+
+      if( !empty($content['website']) ){
+
+        echo '<a href="'.$content["website"].'" class="info-link">';
+        include('assets/network.svg');
+        echo $content['name'];
+        echo '</a><hr>';
+
+      }
+
+      if( !empty($content['twitter']) ){
+
+        echo '<a href="'.$content["twitter"].'" class="info-link">';
+        include('assets/twitter.svg');
+        echo $content['name'] . ' on Twitter';
+        echo '</a><hr>';
+
+      }
 
       // RELATED POSTS
 
@@ -137,35 +192,7 @@
 
       }
 
-      // For event page OR project page: show artists
-
-      if( $table == 'events' || $table == 'projects' ){
-
-        $artists = explode(',',$content['artists_array']);
-
-        if ( !empty($artists[0]) ){
-
-          // keep first artist listed in place, shuffle the rest of the artists
-
-          $first_artist = array_shift($artists);
-          shuffle($artists); // mix it up
-          array_unshift($artists,$first_artist); // add the first back on
-          
-          echo "<div class='related'>";
-          echo "<h3>Artists:</h3>";
-          foreach( $artists as $artist){
-            $artist_slug = $artist;
-            $artist = get_row('artists','slug',$artist);
-            
-            $pic  = $artist['pic'];
-            $name = $artist['name'];
-            $url  = $site_url.'/artists/'.$artist_slug;
-
-            output_related_post($url,$pic,$name);
-          }
-          echo "</div>";
-        }
-      }
+      
      
       // For artists page: show projects
       if( $table == 'artists' ){
@@ -210,32 +237,7 @@
         }
       }
 
-      if( !empty($content['website']) ){
-
-        echo '<a href="'.$content["website"].'" class="info-link">';
-        include('assets/network.svg');
-        echo $content['name'];
-        echo '</a><hr>';
-
-      }
-
-      if( !empty($content['twitter']) ){
-
-        echo '<a href="'.$content["twitter"].'" class="info-link">';
-        include('assets/twitter.svg');
-        echo $content['name'] . ' on Twitter';
-        echo '</a><hr>';
-
-      }      
-
-      if( !empty($content['shop_url']) ){
-
-        echo '<a href="'.$content["shop_url"].'" class="info-link">';
-        include('assets/shop.svg');
-        echo 'Online Store';
-        echo '</a><hr>';
-
-      }  
+     
 
       ?>
 
