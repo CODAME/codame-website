@@ -57,7 +57,7 @@
       // For event or project or artist page, show shop url if there is one
       if( !empty($content['shop_url']) ){
 
-        echo '<a href="'.$content["shop_url"].'" class="info-link shop">';
+        echo '<a href="'.$content["shop_url"].'" class="info-link">';
         include('assets/shop.svg');
         echo 'Online Shop';
         echo '</a><hr>';
