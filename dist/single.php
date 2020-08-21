@@ -60,7 +60,7 @@
         echo '<div class="cta-wrapper">';
         echo '<a href="'.$content["shop_url"].'" id="cta-link">';
         include('assets/shop.svg');
-        echo 'Online Shop';
+        echo 'Buy now';
         echo '</a><hr>';
         echo '</div>';
 
