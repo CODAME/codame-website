@@ -57,10 +57,12 @@
       // For event or project or artist page, show shop url if there is one
       if( !empty($content['shop_url']) ){
 
-        echo '<a href="'.$content["shop_url"].'" class="info-link">';
+        echo '<div class="cta-wrapper">';
+        echo '<a href="'.$content["shop_url"].'" id="cta-link">';
         include('assets/shop.svg');
         echo 'Buy now';
         echo '</a><hr>';
+        echo '</div>';
 
       }
 
@@ -134,7 +136,7 @@
         if( mysqli_num_rows($events) ){
 
           echo "<div class='related'>";
-          echo "<h3>Seen At:</h3>";  
+          echo "<h3>Events:</h3>";
 
           while($event = mysqli_fetch_assoc($events)){
 
@@ -148,7 +150,6 @@
 
           echo "</div>";
         }
-        
       }
 
       // For event page: show sponsors and projects

@@ -83,7 +83,7 @@
 
 
 .info-link {
-  color: #fff;
+  color: #ffffff;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 12px;
@@ -91,6 +91,32 @@
   border-bottom: 1px dotted;
   position: relative;
   line-height: 20px;
+}
+
+.cta-wrapper {
+  margin-bottom: 6px;
+}
+
+#cta-link {
+  display: flex;
+  align-items: center;
+  background-color: #930092;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  max-width: 160px;
+
+  svg {
+    transform: scale(0.8);
+  }
+
+  &:hover {
+    background-color: #b12eb1;
+    transition: all 0.3s ease;
+  }
 }
 
 #info-bar svg{
