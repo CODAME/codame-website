@@ -57,10 +57,12 @@
       // For event or project or artist page, show shop url if there is one
       if( !empty($content['shop_url']) ){
 
-        echo '<a href="'.$content["shop_url"].'" class="info-link">';
+        echo '<div class="cta-wrapper">';
+        echo '<a href="'.$content["shop_url"].'" id="cta-link">';
         include('assets/shop.svg');
         echo 'Online Shop';
         echo '</a><hr>';
+        echo '</div>';
 
       }
 
