@@ -194,7 +194,6 @@
 
       }
 
-      
      
       // For artists page: show projects
       if( $table == 'artists' ){
@@ -238,8 +237,6 @@
           echo "</div>";
         }
       }
-
-     
 
       ?>
 
