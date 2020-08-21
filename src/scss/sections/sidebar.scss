@@ -47,6 +47,16 @@
   opacity: 0;
 }
 
+#link-shop::after {
+	content: "new";
+	padding: 2px;
+	margin: 0 4px;
+	font-size: 10px;
+	background-color: #930092;
+	border-radius: 2px;
+	color: white;
+}
+
 // Social icons
 
 #social-sidebar {

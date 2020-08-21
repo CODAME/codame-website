@@ -135,7 +135,8 @@ if (!empty($_POST) && !$_POST['password']){
         'sponsors_array' => $_POST['sponsors-array'],
         'partners_array' => $_POST['partners-array'],
         'old_url'        => $_POST['old-url'],
-        'event_type'     => $_POST['event-type']
+        'event_type'     => $_POST['event-type'],
+        'shop_url'       => $_POST['shop_url'],
       );
     }
 
@@ -166,7 +167,8 @@ if (!empty($_POST) && !$_POST['password']){
         'website'       => $_POST['website'],
         'artists_array' => $_POST['artists-array'],
         'old_url'       => $_POST['old-url'],
-        'edited'      => $now
+        'edited'        => $now,
+        'shop_url'      => $_POST['shop_url'],
       );
     }
 
