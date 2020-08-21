@@ -59,7 +59,7 @@
 
         echo '<a href="'.$content["shop_url"].'" class="info-link">';
         include('assets/shop.svg');
-        echo 'Online Shop';
+        echo 'Buy now';
         echo '</a><hr>';
 
       }
