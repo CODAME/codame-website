@@ -115,15 +115,6 @@ if( $action == "edit" ){
 
         <? } ?>
 
-        <? if( $table == 'artists' ){ ?>
-
-          <label>
-            <span><? echo $noun ?> Shop URL (appears on sidebar)</span>
-            <input type="text" name="shop_url" placeholder="//example.com/<? echo $noun ?>" value="<? echo $content['shop_url'] ?>"/>
-          </label>
-
-        <? } ?>
-
         <!-- Fields for events and projects only. (Artists list) -->
         <? if( $table == 'events' ){ ?>
           <label>
