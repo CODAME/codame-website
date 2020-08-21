@@ -170,6 +170,14 @@ if( $action == "edit" ){
 
         <? } ?>
 
+        <!-- Shop url input field for artists, events and projects -->
+        <? if( $table == 'artists' || $table == 'events' || $table == 'projects' ){ ?>
+          <label>
+            <span><? echo $noun ?> Shop URL (appears on sidebar)</span>
+            <input type="text" name="shop_url" value="<? echo $content['shop_url'] ?>"/>
+          </label>
+        <? } ?>
+
         </fieldset>
 
         <fieldset class=right>

@@ -142,14 +142,7 @@ if( $action == "edit" ){
             <input name="artists-array" id="artists-array" value="<? echo $content['artists_array']; ?>" />
           </label>
 
-          <label>
-            <span><? echo $noun ?> Shop URL (appears on sidebar)</span>
-            <input type="text" name="shop_url" placeholder="//example.com/" value="<? echo $content['shop_url'] ?>"/>
-          </label>
-
         <? } ?>
-
-        
 
         <!-- Fields for events only -->
 
@@ -175,6 +168,14 @@ if( $action == "edit" ){
             <input type="date" name="date" value="<? echo $content['date'] ?>" />
           </label>
 
+        <? } ?>
+
+        <!-- Shop url input field for artists, events and projects -->
+        <? if( $table == 'artists' || $table == 'events' || $table == 'projects' ){ ?>
+          <label>
+            <span><? echo $noun ?> Shop URL (appears on sidebar)</span>
+            <input type="text" name="shop_url" value="<? echo $content['shop_url'] ?>"/>
+          </label>
         <? } ?>
 
         </fieldset>
