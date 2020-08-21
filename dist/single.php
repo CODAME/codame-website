@@ -134,7 +134,7 @@
         if( mysqli_num_rows($events) ){
 
           echo "<div class='related'>";
-          echo "<h3>Seen At:</h3>";  
+          echo "<h3>Events:</h3>";
 
           while($event = mysqli_fetch_assoc($events)){
 
@@ -148,7 +148,6 @@
 
           echo "</div>";
         }
-        
       }
 
       // For event page: show sponsors and projects
