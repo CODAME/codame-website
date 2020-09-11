@@ -45,6 +45,18 @@
 
     <div id='social-sidebar'>
 
+      <a href="https://www.pinterest.com/codameart/" target="_blank">
+        <? include('assets/pinterest.svg') ?>
+      </a>
+
+      <a href="https://www.youtube.com/channel/UC-xKBSgGX4xfLS7-O3w9xBQ" target="_blank">
+        <? include('assets/youtube.svg') ?>
+      </a>
+
+      <a href="https://discord.com/invite/pk3C8DB" target="_blank">
+        <? include('assets/discord.svg') ?>
+      </a>
+
       <a href="https://codame.substack.com/" target="_blank">
         <? include('assets/rss.svg') ?>
       </a>
