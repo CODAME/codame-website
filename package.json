@@ -4,7 +4,9 @@
 	"description": "Codame Website",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "yarn run gulp",
+		"serve": "cd dist && php -S localhost:8000 -n"
 	},
 	"repository": {
 		"type": "git",
