@@ -43,6 +43,7 @@ if (!empty($_POST) && !$_POST['password']){
           'description'    => $_POST['description'],
           'artists_array'  => $_POST['artists-array'],
           'projects_array' => $_POST['projects-array'],
+          'events_array'   => $_POST['events-array'],
           'old_url'        => $_POST['old-url'],
           'event_type'     => $_POST['event-type']
         );
@@ -132,6 +133,7 @@ if (!empty($_POST) && !$_POST['password']){
         'description'    => $_POST['description'],
         'artists_array'  => $_POST['artists-array'],
         'projects_array' => $_POST['projects-array'],
+        'events_array'   => $_POST['events-array'],
         'sponsors_array' => $_POST['sponsors-array'],
         'partners_array' => $_POST['partners-array'],
         'old_url'        => $_POST['old-url'],
@@ -222,7 +224,7 @@ if (!empty($_POST) && !$_POST['password']){
     generate_sidebar_pages($site_url);
   }
 
-  // Redirects. Sometimes useful to comment out to see result of POSTs before redirect.
+  //Redirects. Sometimes useful to comment out to see result of POSTs before redirect.
   if( $error ){
     echo $error;
   }else if( $table == 'sponsors' ){

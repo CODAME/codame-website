@@ -428,7 +428,7 @@ function output_results( $table, $offset, $limit, $layout_type, $order_by = '', 
       if( $table == 'sponsors' || $table == 'partners' ){
         $url = $result['website'];
       }else{
-        $url = $table . '/' . $slug;
+        $url = '/' . $table . '/' . $slug;
       }
 
       $tile_class = $table."-tile";

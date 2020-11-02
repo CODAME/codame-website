@@ -42,6 +42,32 @@
           <? echo $content['description']; ?>
         </div>
 
+        <? 
+          // Display featured events
+          $featured_events = explode(',',$content['events_array']);
+          $where_clause_part = '';
+          $slugs = [];
+
+          foreach ($featured_events as $featured_event){            
+            $slugs[] = "'" . trim($featured_event) . "'";
+          }
+
+          $where_clause_part = implode(',', $slugs);
+
+          if($table == 'events' && !empty($featured_events[0])) {
+            echo "<div>";
+            echo "<h2>Events:</h2>";
+            
+            $order_by = "date";
+            $where_clause = " WHERE slug IN ($where_clause_part) ";
+
+            echo "<div class='tiles'>";
+            output_results($table,0,0,'tiles',$order_by, $where_clause);
+            echo "</div>";
+            echo "</div>";
+          }
+        ?>
+
     </div>
     <div id="info-bar">
 

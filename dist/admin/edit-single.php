@@ -140,6 +140,11 @@ if( $action == "edit" ){
         <? if( $table == 'events' ){ ?>
 
           <label>
+            <span>Featured events</span>
+            <input name="events-array" id="events-array" value="<? echo $content['events_array']; ?>" />
+          </label>
+
+          <label>
             <span>Projects Represented</span>
             <input name="projects-array" id="projects-array" value="<? echo $content['projects_array']; ?>" />
           </label>
