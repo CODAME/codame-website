@@ -224,19 +224,19 @@ if (!empty($_POST) && !$_POST['password']){
     generate_sidebar_pages($site_url);
   }
 
-  // Redirects. Sometimes useful to comment out to see result of POSTs before redirect.
-  // if( $error ){
-  //   echo $error;
-  // }else if( $table == 'sponsors' ){
-  //   echo "<script>location.href='$site_url/admin/category.php?table=sponsors'</script>";  
-  // }else if( $table == 'partners' ){
-  //   echo "<script>location.href='$site_url/admin/category.php?table=partners'</script>";  
-  // }else if( $table == 'headers' ){
-  //   echo "<script>location.href='$site_url'</script>";  
-  // }else{
-  //   // die;
-  //   echo "<script>location.href='$site_url/$table/$slug'</script>";  
-  // }
+  Redirects. Sometimes useful to comment out to see result of POSTs before redirect.
+  if( $error ){
+    echo $error;
+  }else if( $table == 'sponsors' ){
+    echo "<script>location.href='$site_url/admin/category.php?table=sponsors'</script>";  
+  }else if( $table == 'partners' ){
+    echo "<script>location.href='$site_url/admin/category.php?table=partners'</script>";  
+  }else if( $table == 'headers' ){
+    echo "<script>location.href='$site_url'</script>";  
+  }else{
+    // die;
+    echo "<script>location.href='$site_url/$table/$slug'</script>";  
+  }
 }
 
 ?>
