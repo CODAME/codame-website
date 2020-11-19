@@ -133,6 +133,21 @@ if( $action == "edit" ){
             <input name="artists-array" id="artists-array" value="<? echo $content['artists_array']; ?>" />
           </label>
 
+          <label>
+            <span>Featured events</span>
+            <input name="events-array" id="events-array" value="<? echo $content['events_array']; ?>" />
+          </label>
+
+          <label>
+            <span>Partnered With</span>
+            <input name="partners-array" id="partners-array" value="<? echo $content['partners_array']; ?>" />
+          </label>
+
+          <label>
+            <span>Sponsored By</span>
+            <input name="sponsors-array" id="sponsors-array" value="<? echo $content['sponsors_array']; ?>" />
+          </label>
+
         <? } ?>
 
         <!-- Fields for events only -->
@@ -147,16 +162,6 @@ if( $action == "edit" ){
           <label>
             <span>Projects Represented</span>
             <input name="projects-array" id="projects-array" value="<? echo $content['projects_array']; ?>" />
-          </label>
-
-          <label>
-            <span>Sponsored By</span>
-            <input name="sponsors-array" id="sponsors-array" value="<? echo $content['sponsors_array']; ?>" />
-          </label>
-          
-          <label>
-            <span>Partnered With</span>
-            <input name="partners-array" id="partners-array" value="<? echo $content['partners_array']; ?>" />
           </label>
 
           <label>

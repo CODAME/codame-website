@@ -178,8 +178,8 @@
         }
       }
 
-      // For event page: show sponsors and projects
-      if( $table == 'events' ){
+      // For event and project page: show sponsors
+      if( $table == 'events' || $table == 'projects' ){
 
         // sponsors
         $sponsors = explode(',',$content['sponsors_array']);
@@ -199,8 +199,10 @@
           }
           echo "</div>";
         }
-
-        // projects
+      }
+      
+      // For event page: show projects
+      if( $table == 'events' ){
         $projects = explode(',',$content['projects_array']);
         if ( !empty($projects[0]) ){
 
@@ -243,8 +245,8 @@
         }
       }
       
-      // For event page: show partners (after artists and projects)
-      if( $table == 'events' ){
+      // For event and project page: show partners (after artists and projects)
+      if( $table == 'events' || $table == 'projects' ){
 
         // partners
         $partners = explode(',',$content['partners_array']);

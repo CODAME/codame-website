@@ -43,7 +43,9 @@ if (!empty($_POST) && !$_POST['password']){
           'description'    => $_POST['description'],
           'artists_array'  => $_POST['artists-array'],
           'projects_array' => $_POST['projects-array'],
+          'sponsors_array' => $_POST['sponsors-array'],
           'events_array'   => $_POST['events-array'],
+          'partners_array' => $_POST['partners-array'],
           'old_url'        => $_POST['old-url'],
           'event_type'     => $_POST['event-type']
         );
@@ -74,6 +76,8 @@ if (!empty($_POST) && !$_POST['password']){
           'twitter'       => $_POST['twitter'],
           'website'       => $_POST['website'],
           'artists_array' => $_POST['artists-array'],
+          'partners_array' => $_POST['partners-array'],
+          'sponsors_array' => $_POST['sponsors-array'],
           'old_url'       => $_POST['old-url'],
           'edited'        => $now
         );
@@ -168,6 +172,8 @@ if (!empty($_POST) && !$_POST['password']){
         'twitter'       => $_POST['twitter'],
         'website'       => $_POST['website'],
         'artists_array' => $_POST['artists-array'],
+        'partners_array' => $_POST['partners-array'],
+        'sponsors_array' => $_POST['sponsors-array'],
         'old_url'       => $_POST['old-url'],
         'edited'        => $now,
         'shop_url'      => $_POST['shop_url'],
