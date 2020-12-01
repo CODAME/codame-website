@@ -41,7 +41,7 @@
         <div class="text-content">
           <? echo $content['description']; ?>
         </div>
-
+        <div class="elfsight-app-19676b17-fe57-4023-baab-2e9eb2ce3f35"></div>
         <? 
           // Display featured events
           $featured_events = explode(',',$content['events_array']);
