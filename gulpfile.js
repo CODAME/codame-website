@@ -56,7 +56,7 @@ gulp.task('styles', [], function(){
     }))
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(autoprefixer({
-      browsers: ['last 10 versions'],
+      overrideBrowserslist: ['last 10 versions'],
       cascade: false
     }))
     .pipe(rename('style.css'))

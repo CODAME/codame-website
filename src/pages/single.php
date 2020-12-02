@@ -41,7 +41,6 @@
         <div class="text-content">
           <? echo $content['description']; ?>
         </div>
-        <div class="elfsight-app-19676b17-fe57-4023-baab-2e9eb2ce3f35"></div>
         <? 
           // Display featured events
           $featured_events = explode(',',$content['events_array']);
@@ -67,7 +66,19 @@
             echo "</div>";
           }
         ?>
-
+        <? if($content['slug'] == "art-tech-festival-2020-joynt") { ?>
+          <div class="festival-info">
+            <h3>『 Partners & Sponsors  』</h3>
+            <p><a href="https://codame.com/pages/support-art-tech">Contact Us</a> to inspire and educate your team with a discounted Ticket Group Buy! Be recognized as an innovative and visionary organization. Join our list of amazing <a href="https://codame.com/sponsors">Sponsors</a> with a tax deductable non profit donation. </p>
+            <h3>『 Volunteers 』</h3>
+            <p><a href="https://codame.com/pages/call-for-volunteers">Joyn</a> us to be part of the magic! All background and interests welcome for a fun and rewarding experience. </p>
+            <h3>『 Call for Proposals 』</h3>
+            <p>The deadline for the CODAME ART+TECH Festival 2020 has passed, but we're still excited to hear from you for future opportunities! Fill in our <a href="https://codame.com/pages/call-for-proposals">Call for Proposals Form</a>. </p>
+            <ul><li>💟</li><li>👾</li><li>💜</li><li>👾</li><li>💟</li></ul>
+            <p>CODAME is a member of Intersection for the Arts a non profit 501(c)(3) organization. All proceeds will be split with the participating artists. </p>
+            <p>Thank you for your support for ART <span>💜</span> TECH !!! <a href="http://codame.com/pages/code-of-conduct">Code of Conduct</a> for all attendees. </p>
+          </div>
+        <? } ?>
     </div>
     <div id="info-bar">
 

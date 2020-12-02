@@ -40,3 +40,27 @@
 #container{
   overflow: auto;
 }
+
+.festival-info {
+  p {
+    line-height: 1.5;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+  
+  a {
+    color: white;
+  }
+
+  li {
+    list-style-type: none;
+    padding: 10px;
+  }
+
+  span {
+    padding: 0 10px;
+  }
+}
