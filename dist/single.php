@@ -41,32 +41,35 @@
         <div class="text-content">
           <? echo $content['description']; ?>
         </div>
-        <? 
-          // Display featured events
-          $featured_events = explode(',',$content['events_array']);
-          $where_clause_part = '';
-          $slugs = [];
+        <? if($content['slug'] != "art-tech-festival-2020-joynt") { ?>
+          <? 
+            // Display featured events
+            $featured_events = explode(',',$content['events_array']);
+            $where_clause_part = '';
+            $slugs = [];
 
-          foreach ($featured_events as $featured_event){            
-            $slugs[] = "'" . trim($featured_event) . "'";
-          }
+            foreach ($featured_events as $featured_event){            
+              $slugs[] = "'" . trim($featured_event) . "'";
+            }
 
-          $where_clause_part = implode(',', $slugs);
+            $where_clause_part = implode(',', $slugs);
 
-          if($table == 'events' && !empty($featured_events[0])) {
-            echo "<div>";
-            echo "<h2>Events:</h2>";
-            
-            $order_by = "date";
-            $where_clause = " WHERE slug IN ($where_clause_part) ";
+            if($table == 'events' && !empty($featured_events[0])) {
+              echo "<div>";
+              echo "<h2>Events:</h2>";
+              
+              $order_by = "date";
+              $where_clause = " WHERE slug IN ($where_clause_part) ";
 
-            echo "<div class='tiles'>";
-            output_results($table,0,0,'tiles',$order_by, $where_clause);
-            echo "</div>";
-            echo "</div>";
-          }
-        ?>
+              echo "<div class='tiles'>";
+              output_results($table,0,0,'tiles',$order_by, $where_clause);
+              echo "</div>";
+              echo "</div>";
+            }
+          ?>
+        <? } ?>
         <? if($content['slug'] == "art-tech-festival-2020-joynt") { ?>
+          <div class="elfsight-app-3eb52dbc-c36b-40bd-9b9b-da4d14fb4706"></div>
           <div class="festival-info">
             <h3>『 Partners & Sponsors  』</h3>
             <p><a href="https://codame.com/pages/support-art-tech">Contact Us</a> to inspire and educate your team with a discounted Ticket Group Buy! Be recognized as an innovative and visionary organization. Join our list of amazing <a href="https://codame.com/sponsors">Sponsors</a> with a tax deductable non profit donation. </p>
