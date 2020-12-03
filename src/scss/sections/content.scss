@@ -65,3 +65,17 @@
     padding: 0 10px;
   }
 }
+
+/* Elfwidget custom styles */
+.eaec-event-viewer-modalContent .eaec-read-more-content a {
+  color: white;
+  font-size: 20px;
+}
+
+.eaec-event-viewer-modalContent .eaec-read-more-content:after {
+  visibility: hidden;
+}
+
+.jsx-2840743897 .eaec-popup-item-readMoreButton {
+  display: none;
+}
