@@ -91,6 +91,11 @@ if( $action == "edit" ){
             <input type="text" name="email" placeholder="Email Address" value="<? echo $content['email'] ?>"/>
           </label>
 
+          <label>
+            <span><? echo $noun ?> Instagram URL (appears on sidebar)</span>
+            <input type="text" name="instagram"  value="<? echo $content['instagram'] ?>"/>
+          </label>
+
         <? } ?>
 
         <!-- Fields for artists, projects, sponsors (website) -->

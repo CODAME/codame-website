@@ -153,6 +153,16 @@
 
       }
 
+
+      if( !empty($content['instagram']) ){
+
+        echo '<a href="'.$content["instagram"].'" class="info-link">';
+        include('assets/instagram.svg');
+        echo $content['name'] . ' on Instagram';
+        echo '</a><hr>';
+
+      }
+
       // RELATED POSTS
 
       // For artist page OR project page: show events
