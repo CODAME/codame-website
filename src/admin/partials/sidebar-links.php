@@ -20,7 +20,8 @@
         <span>Projects</span>
         <a href="<? echo $site_url ?>/admin/edit-single.php?action=add&table=projects">New Project</a>
         <a href="category.php?table=projects">All Projects</a>
-        <a href="<? echo $site_url ?>/admin/edit-header.php?slug=projects">Projects Header</a>    
+        <a href="<? echo $site_url ?>/admin/edit-header.php?slug=projects">Projects Header</a>
+        <a href="<? echo $site_url ?>/admin/edit-header.php?slug=nft">NFT Header</a>   
     </div>
     <div>
         <span>Sponsors</span>

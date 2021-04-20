@@ -1,4 +1,4 @@
-#sidebar{
+#sidebar {
   float: left;
   width: 30%;
   max-width: 250px;
@@ -11,50 +11,51 @@
     color: #ddd;
   }
 }
-#menu-button{
-  color:#fff;
+#menu-button {
+  color: #fff;
   display: none; // this is shown with media queries.
 }
-#links{
+#links {
   float: left;
   width: 100%;
   margin-top: 20px;
 }
-#links a, #menu-button{
+#links a,
+#menu-button {
   float: left;
   width: 100%;
-  padding:10px;
-  color:#fff;
+  padding: 10px;
+  color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 13px;
   border-bottom: 1px solid #111;
   border-top: 1px solid #222;
-  transition:background-color .2s;
+  transition: background-color 0.2s;
 }
-.active-workshops>#link-workshops,
-.active-artists>#link-artists,
-.active-events>#link-events, 
-.active-projects>#link-projects{
-  background-color: rgba(40,40,40,.5);
+.active-workshops > #link-workshops,
+.active-artists > #link-artists,
+.active-events > #link-events,
+.active-projects > #link-projects {
+  background-color: rgba(40, 40, 40, 0.5);
 }
-#links a:hover{
+#links a:hover {
   background-color: rgba(64, 64, 64, 0.79);
 }
 #links hr {
-  float: none;  
+  float: none;
   margin-bottom: 10px;
   opacity: 0;
 }
 
-#link-shop::after {
-	content: "new";
-	padding: 2px;
-	margin: 0 4px;
-	font-size: 10px;
-	background-color: #930092;
-	border-radius: 2px;
-	color: white;
+#link-nft::after {
+  content: "new";
+  padding: 2px;
+  margin: 0 4px;
+  font-size: 10px;
+  background-color: #930092;
+  border-radius: 2px;
+  color: white;
 }
 
 // Social icons

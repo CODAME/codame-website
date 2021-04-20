@@ -16,6 +16,7 @@ RewriteRule ^projects\/?$ ./category.php?table=projects
 RewriteRule ^sponsors\/?$ ./category.php?table=sponsors
 RewriteRule ^partners\/?$ ./category.php?table=partners
 RewriteRule ^workshops\/?$ ./category.php?table=events&event_type=workshop
+RewriteRule ^nft\/?$ ./category.php?table=projects&is_nft=nft
 
 # Singles:
 RewriteRule ^artists\/([^\/]*)\/?$ ./single.php?table=artists&slug=$1
