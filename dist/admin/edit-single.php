@@ -131,6 +131,16 @@ if( $action == "edit" ){
           </label>
         <? } ?>
 
+        <? if( $table == 'projects' ){ ?>
+          <label>
+            <span>Is NFT?</span>
+            <select name="project-type">
+              <option value="project" <?= $content['is_nft'] != "nft" ? "selected='selected'" : "" ?>>No</option>
+              <option value="nft"<?= $content['is_nft'] == "nft" ? "selected='selected'" : "" ?>>Yes</option>
+            </select>
+          </label>
+        <? } ?>
+
         <? if( $table == 'events' || $table == 'projects' ){ ?>
 
           <label>

@@ -58,6 +58,18 @@
       </div>
     </section>
 
+    <!-- NFT projects -->
+     <section class="column" id='projects'>
+      <a href="<? echo $site_url; ?>/nft" class="bar-link">
+        <h2>
+          NFT Art
+        </h2>
+      </a>
+      <div class='inner-column'>
+        <? output_results('projects',0,0,'blocks','edited', " WHERE is_nft = 'nft' "); ?>
+      </div>
+    </section>
+
   </div>
   <? include('partials/footer.php') ?>
 

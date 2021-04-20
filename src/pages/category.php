@@ -21,10 +21,23 @@
       $where_clause = " WHERE event_type = 'event' ";
       $header = get_row('headers','slug','events');
     }
-  } else if (  
+  } 
+  
+  if ($table == 'projects') {
+      if ($_GET['is_nft'] == 'nft') {
+        $page_title = "NFT art";
+        $where_clause = " WHERE is_nft = 'nft' ";
+        $header = get_row('headers', 'slug', 'nft');
+    } else {
+      $page_title = "Projects";
+      $where_clause = " WHERE is_nft IS NULL ";
+      $header = get_row('headers','slug','projects');
+    }
+ } 
+  
+  if (  
     $table == "homepage" ||
     $table == "sponsors" ||
-    $table == "projects" ||
     $table == "artists"
   ) {
     $header = get_row('headers','slug',$table);
