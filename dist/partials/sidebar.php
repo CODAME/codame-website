@@ -26,8 +26,8 @@
       )
      )
       ?>'>
-      <a href="<? echo $site_url; ?>/nft" id='link-nft'>NFT art</a>
-      <a href='https://shop.codame.com/' id="link-shop">Shop</a>
+      <!-- <a href="<? echo $site_url; ?>/nft" id='link-nft'>NFT art</a>
+      <a href='https://shop.codame.com/' id="link-shop">Shop</a>//?>-->
       <a href="<? echo $site_url; ?>/workshops" id='link-workshops'>Workshops</a>
       <a href="<? echo $site_url; ?>/events" id='link-events'>Events</a>
       <a href="<? echo $site_url; ?>/projects" id='link-projects'>Projects</a>
